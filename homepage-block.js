@@ -1,5 +1,6 @@
 const $ = require('jquery');
 const React = require('react');
+const Link = require('react-router').Link
 const HomepageBlock = React.createClass({
   render: function() {
     return ( 
@@ -7,7 +8,7 @@ const HomepageBlock = React.createClass({
         {
           this.props.data.map(function(item, index) {
             return <tr key={item.nb}>
-              <td><a href='#'>{item.nb}</a></td>
+              <td><Link to={`/blocks/${item.nb}`}>{item.nb}</Link></td>
               <td>{item.time_utc}</td>
               <td>{item.nb_txs}</td>
               <td>{item.fee}</td>
