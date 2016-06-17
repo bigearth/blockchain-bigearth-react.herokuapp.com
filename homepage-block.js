@@ -6,7 +6,7 @@ const HomepageBlock = React.createClass({
       <tbody>
         {
           this.props.data.map(function(item, index) {
-            return <tr>
+            return <tr key={item.nb}>
               <td><a href='#'>{item.nb}</a></td>
               <td>{item.time_utc}</td>
               <td>{item.nb_txs}</td>
