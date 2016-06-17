@@ -1,5 +1,6 @@
 const $ = require('jquery');
 const React = require('react');
+const Link = require('react-router').Link
 const BlocksHero = React.createClass({
   getInitialState: function() {
     return { };
@@ -37,8 +38,8 @@ const BlocksHero = React.createClass({
       <div>
         <h2><span class='glyphicon glyphicon-th-large' aria-hidden='true'></span> Bitcoin <strong>Block</strong></h2>
         <ul class='breadcrumb'>
-        <li><a href="#">Home</a></li>
-        <li class='active'>Block {this.state.nb}</li>
+          <li><Link to={"/"}>Home</Link></li>
+          <li class='active'>Block {this.state.nb}</li>
         </ul>
         <section class='panel panel-default'>
           <div class='table-responsive'>
@@ -54,7 +55,6 @@ const BlocksHero = React.createClass({
                 </tr>
                 <tr>
                   <th class='btc'><span class='glyphicon glyphicon-bitcoin' aria-hidden='true'></span> Trades Sum</th>
-                  <th class='hide usd'><span class='glyphicon glyphicon-usd' aria-hidden='true'></span> Trades Sum</th>
                   <td>{this.state.vout_sum}</td>
                 </tr>
                 <tr>
@@ -67,7 +67,6 @@ const BlocksHero = React.createClass({
                 </tr>
                 <tr>
                   <th class='btc'><span class='glyphicon glyphicon-bitcoin' aria-hidden='true'></span> Fee</th>
-                  <th class='hide usd'><span class='glyphicon glyphicon-usd' aria-hidden='true'></span> Fee</th>
                   <td>{this.state.fee}</td>
                 </tr>
                 <tr>
@@ -88,11 +87,11 @@ const BlocksHero = React.createClass({
                 </tr>
                 <tr>
                   <th><span class='glyphicon glyphicon-menu-right' aria-hidden='true'></span> Next Block Hash</th>
-                  <td><a href='#'>{this.state.next_block_hash}</a></td>
+                  <td><Link to={`/blocks/${this.state.next_block_hash}`}>{this.state.next_block_hash}</Link></td>
                 </tr>
                 <tr>
                   <th><span class='glyphicon glyphicon-menu-left' aria-hidden='true'></span> Prev Block Hash</th>
-                  <td><a href="#">{this.state.prev_block_hash}</a></td>
+                  <td><Link to={`/blocks/${this.state.next_block_hash}`}>{this.state.prev_block_hash}</Link></td>
                 </tr>
                 <tr>
                   <th><span class='glyphicon glyphicon-scale' aria-hidden='true'></span> Size</th>
@@ -107,7 +106,6 @@ const BlocksHero = React.createClass({
           </div>
         </section>
       </div>
-
     );
   }
 });

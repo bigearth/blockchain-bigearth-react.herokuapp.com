@@ -13,7 +13,7 @@ const BlocksTransaction = React.createClass({
             <div class="panel-heading">
               <h3 class="panel-title">
                 <span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> 
-                <a href="#">{item.tx}</a>
+                <Link to={`/transactions/${item.tx}`}>{item.tx}</Link>
               </h3>
             </div>
             <div class="panel-body">
