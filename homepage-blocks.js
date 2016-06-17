@@ -12,15 +12,6 @@ const HomepageBlocks = React.createClass({
       cache: false,
       success: function(data) {
         this.setState({data: data.data});
-        // console.log(this.state.data);
-        // blocks: {
-        //   nb: data.data.nb,
-        //   time_utc: data.data.time_utc,
-        //   nb_txs: data.data.nb_txs,
-        //   fee: data.data.fee,
-        //   size: data.data.size,
-        //   days_destroyed: data.data.days_destroyed
-        //}
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());

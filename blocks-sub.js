@@ -1,8 +1,12 @@
 const $ = require('jquery');
 const React = require('react');
+const BlocksTransaction = require('./blocks-transaction.js');
 const BlocksSub = React.createClass({
   getInitialState: function() {
-    return { };
+    return {
+      data: [],
+      nb: 0 
+    };
   },
   componentDidMount: function() {
     $.ajax({
@@ -10,19 +14,11 @@ const BlocksSub = React.createClass({
       dataType: 'json',
       cache: false,
       success: function(data) {
-        console.log(data);
-        // this.setState({
-        //   data: data.data,
-        //   value: data.data.markets.coinbase.value,
-        //   all: data.data.volume.all,
-        //   current: data.data.volume.current,
-        //   perc: data.data.volume.perc,
-        //   market_cap: data.data.markets.coinbase.value * data.data.volume.current,
-        //   difficulty: data.data.last_block.difficulty,
-        //   next_difficulty: data.data.next_difficulty.difficulty,
-        //   next_difficulty_perc: data.data.next_difficulty.perc,
-        //   retarget_in: data.data.next_difficulty.retarget_in
-        // });
+        this.setState({
+          data: data.data.txs,
+          nb: data.data.nb
+        });
+        console.log(this.state.data);
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
@@ -31,8 +27,15 @@ const BlocksSub = React.createClass({
   },
   render: function() {
     return ( 
-      <div class='hero'>
-        Blockssub
+      <div class='sub'>
+        <section class='container'>
+          <section class="row m-b-md">
+            <div class="col-sm-12">
+              <h3><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> Transactions (for <strong>Block</strong> {this.state.nb})</h3>
+              <BlocksTransaction data={this.state.data} />
+            </div>
+          </section>
+        </section>
       </div>
     );
   }
