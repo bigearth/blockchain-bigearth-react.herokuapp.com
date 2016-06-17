@@ -1,9 +1,15 @@
 const $ = require('jquery');
 const React = require('react');
 const Link = require('react-router').Link
+const TransactionVin = require('./transaction-vin.js');
+const TransactionVout = require('./transaction-vout.js');
 const TransactionsHero = React.createClass({
   getInitialState: function() {
-    return {data: []};
+    return {
+      data: [],
+      vins: [],
+      vouts: []
+    };
   },
   componentDidMount: function() {
     $.ajax({
@@ -11,7 +17,11 @@ const TransactionsHero = React.createClass({
       dataType: 'json',
       cache: false,
       success: function(data) {
-        this.setState({data: data.data});
+        this.setState({
+          data: data.data,
+          vins: data.data.trade.vins,
+          vouts: data.data.trade.vouts
+        });
         console.log(this.state);
       }.bind(this),
       error: function(xhr, status, err) {
@@ -42,8 +52,7 @@ const TransactionsHero = React.createClass({
                 <section class="panel panel-default">
                   <div class="table-responsive">
                     <table class="table table-striped">
-                      <tbody>
-                      </tbody>
+                      <TransactionVin vins={this.state.vins} />
                     </table>
                   </div>
                 </section>
@@ -53,8 +62,7 @@ const TransactionsHero = React.createClass({
                 <section class="panel panel-default">
                   <div class="table-responsive">
                     <table class="table table-striped">
-                      <tbody>
-                      </tbody>
+                      <TransactionVout vouts={this.state.vouts} />
                     </table>
                   </div>
                 </section>
