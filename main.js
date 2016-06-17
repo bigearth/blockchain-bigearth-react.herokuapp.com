@@ -7,6 +7,7 @@ const Link = require('react-router').Link
 const Homepage = require('./homepage.js');
 const Blocks = require('./blocks.js');
 const Transactions = require('./transactions.js');
+const Addresses = require('./addresses.js');
 const BlockchainBigEarth = React.createClass({
   render: function() {
     return ( 
@@ -20,6 +21,7 @@ ReactDOM.render(
     <Route path="/" component={BlockchainBigEarth} />
     <Route path="/blocks/:id" component={Blocks} />
     <Route path="/transactions/:id" component={Transactions} />
+    <Route path="/addresses/:id" component={Addresses} />
   </Router>,
   document.getElementById('container')
 );
