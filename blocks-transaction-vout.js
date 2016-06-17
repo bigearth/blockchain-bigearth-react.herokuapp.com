@@ -1,7 +1,7 @@
 const $ = require('jquery');
 const React = require('react');
 const Link = require('react-router').Link
-const BlocksTransactionVin = React.createClass({
+const BlocksTransactionVout = React.createClass({
   render: function() {
     return ( 
       <table class="table table-striped">
@@ -21,4 +21,4 @@ const BlocksTransactionVin = React.createClass({
     );
   }
 });
-module.exports = BlocksTransactionVin;
+module.exports = BlocksTransactionVout;

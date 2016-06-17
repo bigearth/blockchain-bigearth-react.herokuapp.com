@@ -2,13 +2,14 @@ const $ = require('jquery');
 const React = require('react');
 const Link = require('react-router').Link
 const BlocksTransactionVin = require('./blocks-transaction-vin.js');
+const BlocksTransactionVout = require('./blocks-transaction-vout.js');
 const BlocksTransaction = React.createClass({
   render: function() {
     return ( 
       <div>
       {
         this.props.data.map(function(item, index) {
-          return <div class="panel panel-default">
+          return <div key={index} class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">
                 <span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> 
@@ -29,10 +30,7 @@ const BlocksTransaction = React.createClass({
                   <h4>Output Address(es)</h4>
                   <section class="panel panel-default">
                     <div class="table-responsive">
-                      <table class="table table-striped">
-                        <tbody>
-                        </tbody>
-                      </table>
+                      <BlocksTransactionVin data={item.trade.vouts} />
                     </div>
                   </section>
                 </div>
