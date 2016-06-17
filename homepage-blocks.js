@@ -11,8 +11,8 @@ const HomepageBlocks = React.createClass({
       dataType: 'json',
       cache: false,
       success: function(data) {
-        this.setState({data: [data.data]});
-        console.log(this.state.data);
+        this.setState({data: data.data});
+        // console.log(this.state.data);
         // blocks: {
         //   nb: data.data.nb,
         //   time_utc: data.data.time_utc,
@@ -44,8 +44,7 @@ const HomepageBlocks = React.createClass({
                             <th><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Days Destroyed</th>
                         </tr>
                     </thead>
-                    <tbody>
-                    </tbody>
+                    <HomepageBlock data={this.state.data} />
                 </table>
             </div>
         </section>
