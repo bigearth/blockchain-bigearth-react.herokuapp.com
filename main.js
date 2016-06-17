@@ -17,7 +17,7 @@ const BlockchainBigEarth = React.createClass({
 ReactDOM.render( 
   <Router>
     <Route path="/" component={BlockchainBigEarth} />
-    <Route path="/blocks/416610" component={Blocks} />
+    <Route path="/blocks/:id" component={Blocks} />
   </Router>,
   document.getElementById('container')
 );
