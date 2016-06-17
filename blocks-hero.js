@@ -1,6 +1,5 @@
 const $ = require('jquery');
 const React = require('react');
-const Link = require('react-router').Link
 const BlocksHero = React.createClass({
   getInitialState: function() {
     return { };
@@ -36,7 +35,6 @@ const BlocksHero = React.createClass({
   render: function() {
     return ( 
       <div>
-        <p><Link to={`/`}>Homepage</Link></p>
         <h2><span class='glyphicon glyphicon-th-large' aria-hidden='true'></span> Bitcoin <strong>Block</strong></h2>
         <ul class='breadcrumb'>
         <li><a href="#">Home</a></li>

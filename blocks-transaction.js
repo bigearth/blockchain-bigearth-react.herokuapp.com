@@ -1,6 +1,7 @@
 const $ = require('jquery');
 const React = require('react');
 const Link = require('react-router').Link
+const BlocksTransactionVin = require('./blocks-transaction-vin.js');
 const BlocksTransaction = React.createClass({
   render: function() {
     return ( 
@@ -20,6 +21,7 @@ const BlocksTransaction = React.createClass({
                   <h4>Input Address(es)</h4>
                   <section class="panel panel-default">
                     <div class="table-responsive">
+                      <BlocksTransactionVin data={item.trade.vins} />
                     </div>
                   </section>
                 </div>

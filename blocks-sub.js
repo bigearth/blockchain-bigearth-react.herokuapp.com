@@ -18,7 +18,6 @@ const BlocksSub = React.createClass({
           data: data.data.txs,
           nb: data.data.nb
         });
-        console.log(this.state.data);
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
