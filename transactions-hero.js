@@ -22,7 +22,6 @@ const TransactionsHero = React.createClass({
           vins: data.data.trade.vins,
           vouts: data.data.trade.vouts
         });
-        console.log(this.state);
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());

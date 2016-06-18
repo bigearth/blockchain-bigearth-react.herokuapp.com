@@ -7,13 +7,13 @@ const AddressesTransaction = React.createClass({
       <div>
         {
           this.props.txs.map(function(item, index) {
-            return <section class="panel panel-default">
+            return <section key={index} class="panel panel-default">
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <tbody>
                             <tr>
                                 <td><span class='glyphicon glyphicon-transfer' aria-hidden='true'></span> Transaction</td>
-                                <td><a href="#">{item.tx}</a></td>
+                                <td><Link to={`/transactions/${item.tx}`}>{item.tx}</Link></td>
                             </tr>
                             <tr>
                                 <td><span class='glyphicon glyphicon-calendar' aria-hidden='true'></span> Created</td>
