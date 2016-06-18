@@ -34922,9 +34922,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = require('react-router');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Link = require('react-router').Link;
 var AddressesHero = _react2.default.createClass({
   displayName: 'AddressesHero',
 
@@ -34984,7 +34985,7 @@ var AddressesHero = _react2.default.createClass({
               'li',
               null,
               _react2.default.createElement(
-                Link,
+                _reactRouter.Link,
                 { to: "/" },
                 'Home'
               )
@@ -35099,9 +35100,12 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _addressesTransaction = require('./addresses-transaction.js');
+
+var _addressesTransaction2 = _interopRequireDefault(_addressesTransaction);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var AddressesTransaction = require('./addresses-transaction.js');
 var AddressesSub = _react2.default.createClass({
   displayName: 'AddressesSub',
 
@@ -35128,7 +35132,7 @@ var AddressesSub = _react2.default.createClass({
     });
   },
   render: function render() {
-    return _react2.default.createElement(AddressesTransaction, { txs: this.state.txs });
+    return _react2.default.createElement(_addressesTransaction2.default, { txs: this.state.txs });
   }
 });
 module.exports = AddressesSub;
@@ -35144,9 +35148,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = require('react-router');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Link = require('react-router').Link;
 var AddressesTransaction = _react2.default.createClass({
   displayName: 'AddressesTransaction',
 
@@ -35183,7 +35188,7 @@ var AddressesTransaction = _react2.default.createClass({
                       'td',
                       null,
                       _react2.default.createElement(
-                        Link,
+                        _reactRouter.Link,
                         { to: '/transactions/' + item.tx },
                         item.tx
                       )
@@ -35263,10 +35268,16 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _addressesHero = require('./addresses-hero.js');
+
+var _addressesHero2 = _interopRequireDefault(_addressesHero);
+
+var _addressesSub = require('./addresses-sub.js');
+
+var _addressesSub2 = _interopRequireDefault(_addressesSub);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var AddressesHero = require('./addresses-hero.js');
-var AddressesSub = require('./addresses-sub.js');
 var Addresses = _react2.default.createClass({
   displayName: 'Addresses',
 
@@ -35274,8 +35285,8 @@ var Addresses = _react2.default.createClass({
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(AddressesHero, { url: "https://stageblockchain.bigearth.io/addresses/" + this.props.params.id + ".json" }),
-      _react2.default.createElement(AddressesSub, { url: "https://btc.blockr.io/api/v1/address/txs/" + this.props.params.id + ".json" })
+      _react2.default.createElement(_addressesHero2.default, { url: "https://stageblockchain.bigearth.io/addresses/" + this.props.params.id + ".json" }),
+      _react2.default.createElement(_addressesSub2.default, { url: "https://btc.blockr.io/api/v1/address/txs/" + this.props.params.id + ".json" })
     );
   }
 });
@@ -35292,9 +35303,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = require('react-router');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Link = require('react-router').Link;
 var BlocksHero = _react2.default.createClass({
   displayName: 'BlocksHero',
 
@@ -35351,7 +35363,7 @@ var BlocksHero = _react2.default.createClass({
           'li',
           null,
           _react2.default.createElement(
-            Link,
+            _reactRouter.Link,
             { to: "/" },
             'Home'
           )
@@ -35538,7 +35550,7 @@ var BlocksHero = _react2.default.createClass({
                   'td',
                   null,
                   _react2.default.createElement(
-                    Link,
+                    _reactRouter.Link,
                     { to: '/blocks/' + this.state.next_block_hash },
                     this.state.next_block_hash
                   )
@@ -35557,7 +35569,7 @@ var BlocksHero = _react2.default.createClass({
                   'td',
                   null,
                   _react2.default.createElement(
-                    Link,
+                    _reactRouter.Link,
                     { to: '/blocks/' + this.state.next_block_hash },
                     this.state.prev_block_hash
                   )
@@ -35689,9 +35701,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = require('react-router');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Link = require('react-router').Link;
 var BlocksTransactionVin = _react2.default.createClass({
   displayName: 'BlocksTransactionVin',
 
@@ -35712,7 +35725,7 @@ var BlocksTransactionVin = _react2.default.createClass({
               _react2.default.createElement('span', { className: 'glyphicon glyphicon-qrcode', 'aria-hidden': 'true' }),
               ' ',
               _react2.default.createElement(
-                Link,
+                _reactRouter.Link,
                 { to: '/addresses/' + item.address },
                 item.address
               )
@@ -35747,9 +35760,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = require('react-router');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Link = require('react-router').Link;
 var BlocksTransactionVout = _react2.default.createClass({
   displayName: 'BlocksTransactionVout',
 
@@ -35806,9 +35820,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = require('react-router');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Link = require('react-router').Link;
 var BlocksTransactionVin = require('./blocks-transaction-vin.js');
 var BlocksTransactionVout = require('./blocks-transaction-vout.js');
 var BlocksTransaction = _react2.default.createClass({
@@ -35830,7 +35845,7 @@ var BlocksTransaction = _react2.default.createClass({
               { className: 'panel-title' },
               _react2.default.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
               _react2.default.createElement(
-                Link,
+                _reactRouter.Link,
                 { to: '/transactions/' + item.tx },
                 item.tx
               )
@@ -36012,9 +36027,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = require('react-router');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Link = require('react-router').Link;
 var HomepageBlock = _react2.default.createClass({
   displayName: 'HomepageBlock',
 
@@ -36030,7 +36046,7 @@ var HomepageBlock = _react2.default.createClass({
             'td',
             null,
             _react2.default.createElement(
-              Link,
+              _reactRouter.Link,
               { to: '/blocks/' + item.nb },
               item.nb
             )
@@ -36078,9 +36094,12 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _homepageBlock = require('./homepage-block.js');
+
+var _homepageBlock2 = _interopRequireDefault(_homepageBlock);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var HomepageBlock = require('./homepage-block.js');
 var HomepageBlocks = _react2.default.createClass({
   displayName: 'HomepageBlocks',
 
@@ -36173,7 +36192,7 @@ var HomepageBlocks = _react2.default.createClass({
                   )
                 )
               ),
-              _react2.default.createElement(HomepageBlock, { data: this.state.data })
+              _react2.default.createElement(_homepageBlock2.default, { data: this.state.data })
             )
           )
         )
@@ -36372,10 +36391,16 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _homepageHero = require('./homepage-hero.js');
+
+var _homepageHero2 = _interopRequireDefault(_homepageHero);
+
+var _homepageBlocks = require('./homepage-blocks.js');
+
+var _homepageBlocks2 = _interopRequireDefault(_homepageBlocks);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var HomepageHero = require('./homepage-hero.js');
-var HomepageBlocks = require('./homepage-blocks.js');
 var Homepage = _react2.default.createClass({
   displayName: 'Homepage',
 
@@ -36383,8 +36408,8 @@ var Homepage = _react2.default.createClass({
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(HomepageHero, { url: 'https://stageblockchain.bigearth.io/coin.json' }),
-      _react2.default.createElement(HomepageBlocks, { url: 'https://stageblockchain.bigearth.io/blocks/416614,416613,416612,416611,416610,416609,416608,416607,416606,416605,416604,416603,416602,416601,416600,416599,416598,416597,416596,416595.json' })
+      _react2.default.createElement(_homepageHero2.default, { url: 'https://stageblockchain.bigearth.io/coin.json' }),
+      _react2.default.createElement(_homepageBlocks2.default, { url: 'https://stageblockchain.bigearth.io/blocks/416614,416613,416612,416611,416610,416609,416608,416607,416606,416605,416604,416603,416602,416601,416600,416599,416598,416597,416596,416595.json' })
     );
   }
 });
@@ -36453,9 +36478,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = require('react-router');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Link = require('react-router').Link;
 var TransactionVin = _react2.default.createClass({
   displayName: 'TransactionVin',
 
@@ -36473,7 +36499,7 @@ var TransactionVin = _react2.default.createClass({
             _react2.default.createElement('span', { className: 'glyphicon glyphicon-qrcode', 'aria-hidden': 'true' }),
             ' ',
             _react2.default.createElement(
-              Link,
+              _reactRouter.Link,
               { to: '/addresses/' + item.address },
               item.address
             )
@@ -36507,9 +36533,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = require('react-router');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Link = require('react-router').Link;
 var TransactionVout = _react2.default.createClass({
   displayName: 'TransactionVout',
 
@@ -36527,7 +36554,7 @@ var TransactionVout = _react2.default.createClass({
             _react2.default.createElement('span', { className: 'glyphicon glyphicon-qrcode', 'aria-hidden': 'true' }),
             ' ',
             _react2.default.createElement(
-              Link,
+              _reactRouter.Link,
               { to: '/addresses/' + item.address },
               item.address
             )
@@ -36561,9 +36588,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = require('react-router');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Link = require('react-router').Link;
 var TransactionVin = require('./transaction-vin.js');
 var TransactionVout = require('./transaction-vout.js');
 var TransactionsHero = _react2.default.createClass({
@@ -36615,7 +36643,7 @@ var TransactionsHero = _react2.default.createClass({
           'li',
           null,
           _react2.default.createElement(
-            Link,
+            _reactRouter.Link,
             { to: "/" },
             'Home'
           )
@@ -36624,7 +36652,7 @@ var TransactionsHero = _react2.default.createClass({
           'li',
           null,
           _react2.default.createElement(
-            Link,
+            _reactRouter.Link,
             { to: '/blocks/' + this.state.data.block },
             this.state.data.block
           )

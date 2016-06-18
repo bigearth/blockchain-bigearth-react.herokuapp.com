@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import React from 'react';
-const Link = require('react-router').Link
+import { Link } from 'react-router'
 const BlocksTransactionVin = React.createClass({
   render: function() {
     return ( 

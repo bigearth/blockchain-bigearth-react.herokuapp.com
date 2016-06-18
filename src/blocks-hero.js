@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import React from 'react';
-const Link = require('react-router').Link
+import { Link } from 'react-router'
 const BlocksHero = React.createClass({
   getInitialState: function() {
     return { };

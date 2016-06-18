@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import React from 'react';
-const HomepageHero = require('./homepage-hero.js');
-const HomepageBlocks = require('./homepage-blocks.js');
+import HomepageHero from './homepage-hero.js';
+import HomepageBlocks from './homepage-blocks.js';
 const Homepage = React.createClass({
   render: function() {
     return ( 

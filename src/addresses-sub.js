@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import React from 'react';
-const AddressesTransaction = require('./addresses-transaction.js');
+import AddressesTransaction from './addresses-transaction.js';
 const AddressesSub = React.createClass({
   getInitialState: function() {
     return {

@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import React from 'react';
-const HomepageBlock = require('./homepage-block.js');
+import HomepageBlock from './homepage-block.js';
 const HomepageBlocks = React.createClass({
   getInitialState: function() {
     return {data: []};

@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import React from 'react';
-const AddressesHero = require('./addresses-hero.js');
-const AddressesSub = require('./addresses-sub.js');
+import AddressesHero from './addresses-hero.js';
+import AddressesSub from './addresses-sub.js';
 const Addresses = React.createClass({
   render: function() {
     return ( 
