@@ -1,3 +1,5 @@
+/* @flow */
+
 import $ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -6,7 +8,7 @@ import Homepage from './homepage.js';
 import Blocks from './blocks.js';
 import Transactions from './transactions.js';
 import Addresses from './addresses.js';
-const BlockchainBigEarth = React.createClass({
+const BlockchainBigEarth: any = React.createClass({
   render: function() {
     return ( 
       <Homepage />
