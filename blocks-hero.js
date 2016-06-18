@@ -36,69 +36,69 @@ const BlocksHero = React.createClass({
   render: function() {
     return ( 
       <div>
-        <h2><span class='glyphicon glyphicon-th-large' aria-hidden='true'></span> Bitcoin <strong>Block</strong></h2>
-        <ul class='breadcrumb'>
+        <h2><span className='glyphicon glyphicon-th-large' aria-hidden='true'></span> Bitcoin <strong>Block</strong></h2>
+        <ul className='breadcrumb'>
           <li><Link to={"/"}>Home</Link></li>
-          <li class='active'>Block {this.state.nb}</li>
+          <li className='active'>Block {this.state.nb}</li>
         </ul>
-        <section class='panel panel-default'>
-          <div class='table-responsive'>
-            <table class='table table-striped'>
+        <section className='panel panel-default'>
+          <div className='table-responsive'>
+            <table className='table table-striped'>
               <tbody>
                 <tr>
-                  <th><span class='glyphicon glyphicon-equalizer' aria-hidden='true'></span> Height</th>
+                  <th><span className='glyphicon glyphicon-equalizer' aria-hidden='true'></span> Height</th>
                   <td>{this.state.nb}</td>
                 </tr>
                 <tr>
-                  <th><span class='glyphicon glyphicon-calendar' aria-hidden='true'></span> Created</th>
+                  <th><span className='glyphicon glyphicon-calendar' aria-hidden='true'></span> Created</th>
                   <td>{this.state.time_utc}</td>
                 </tr>
                 <tr>
-                  <th class='btc'><span class='glyphicon glyphicon-bitcoin' aria-hidden='true'></span> Trades Sum</th>
+                  <th className='btc'><span className='glyphicon glyphicon-bitcoin' aria-hidden='true'></span> Trades Sum</th>
                   <td>{this.state.vout_sum}</td>
                 </tr>
                 <tr>
-                  <th><span class='glyphicon glyphicon-transfer' aria-hidden='true'></span> Transactions</th>
+                  <th><span className='glyphicon glyphicon-transfer' aria-hidden='true'></span> Transactions</th>
                   <td>{this.state.nb_txs}</td>
                 </tr>
                 <tr>
-                  <th><span class='glyphicon glyphicon-link' aria-hidden='true'></span> Difficulty</th>
+                  <th><span className='glyphicon glyphicon-link' aria-hidden='true'></span> Difficulty</th>
                   <td>{this.state.difficulty}</td>
                 </tr>
                 <tr>
-                  <th class='btc'><span class='glyphicon glyphicon-bitcoin' aria-hidden='true'></span> Fee</th>
+                  <th className='btc'><span className='glyphicon glyphicon-bitcoin' aria-hidden='true'></span> Fee</th>
                   <td>{this.state.fee}</td>
                 </tr>
                 <tr>
-                  <th><span class='glyphicon glyphicon-random' aria-hidden='true'></span> Hash</th>
+                  <th><span className='glyphicon glyphicon-random' aria-hidden='true'></span> Hash</th>
                   <td>{this.state.hash}</td>
                 </tr>
                 <tr>
-                  <th><span class='glyphicon glyphicon-align-justify' aria-hidden='true'></span> Version</th>
+                  <th><span className='glyphicon glyphicon-align-justify' aria-hidden='true'></span> Version</th>
                   <td>{this.state.version}</td>
                 </tr>
                 <tr>
-                  <th><span class='glyphicon glyphicon-equalizer' aria-hidden='true'></span> Confirmations</th>
+                  <th><span className='glyphicon glyphicon-equalizer' aria-hidden='true'></span> Confirmations</th>
                   <td>{this.state.confirmations}</td>
                 </tr>
                 <tr>
-                  <th><span class='glyphicon glyphicon-tree-conifer' aria-hidden='true'></span> Merkle Root</th>
+                  <th><span className='glyphicon glyphicon-tree-conifer' aria-hidden='true'></span> Merkle Root</th>
                   <td>{this.state.merkleroot}</td>
                 </tr>
                 <tr>
-                  <th><span class='glyphicon glyphicon-menu-right' aria-hidden='true'></span> Next Block Hash</th>
+                  <th><span className='glyphicon glyphicon-menu-right' aria-hidden='true'></span> Next Block Hash</th>
                   <td><Link to={`/blocks/${this.state.next_block_hash}`}>{this.state.next_block_hash}</Link></td>
                 </tr>
                 <tr>
-                  <th><span class='glyphicon glyphicon-menu-left' aria-hidden='true'></span> Prev Block Hash</th>
+                  <th><span className='glyphicon glyphicon-menu-left' aria-hidden='true'></span> Prev Block Hash</th>
                   <td><Link to={`/blocks/${this.state.next_block_hash}`}>{this.state.prev_block_hash}</Link></td>
                 </tr>
                 <tr>
-                  <th><span class='glyphicon glyphicon-scale' aria-hidden='true'></span> Size</th>
+                  <th><span className='glyphicon glyphicon-scale' aria-hidden='true'></span> Size</th>
                   <td>{this.state.size}</td>
                 </tr>
                 <tr>
-                  <th><span class='glyphicon glyphicon-remove' aria-hidden='true'></span> Days Destroyed</th>
+                  <th><span className='glyphicon glyphicon-remove' aria-hidden='true'></span> Days Destroyed</th>
                   <td>{this.state.days_destroyed}</td>
                 </tr>
               </tbody>

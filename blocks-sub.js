@@ -26,11 +26,11 @@ const BlocksSub = React.createClass({
   },
   render: function() {
     return ( 
-      <div class='sub'>
-        <section class='container'>
-          <section class="row m-b-md">
-            <div class="col-sm-12">
-              <h3><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> Transactions (for <strong>Block</strong> {this.state.nb})</h3>
+      <div className='sub'>
+        <section className='container'>
+          <section className="row m-b-md">
+            <div className="col-sm-12">
+              <h3><span className="glyphicon glyphicon-transfer" aria-hidden="true"></span> Transactions (for <strong>Block</strong> {this.state.nb})</h3>
               <BlocksTransaction data={this.state.data} />
             </div>
           </section>

@@ -9,49 +9,49 @@ const BlocksTransaction = React.createClass({
       <div>
       {
         this.props.data.map(function(item, index) {
-          return <div key={index} class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">
-                <span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> 
+          return <div key={index} className="panel panel-default">
+            <div className="panel-heading">
+              <h3 className="panel-title">
+                <span className="glyphicon glyphicon-transfer" aria-hidden="true"></span> 
                 <Link to={`/transactions/${item.tx}`}>{item.tx}</Link>
               </h3>
             </div>
-            <div class="panel-body">
-              <section class="row m-b-md">
-                <div class="col-sm-6">
+            <div className="panel-body">
+              <section className="row m-b-md">
+                <div className="col-sm-6">
                   <h4>Input Address(es)</h4>
-                  <section class="panel panel-default">
-                    <div class="table-responsive">
+                  <section className="panel panel-default">
+                    <div className="table-responsive">
                       <BlocksTransactionVin data={item.trade.vins} />
                     </div>
                   </section>
                 </div>
-                <div class="col-sm-6">
+                <div className="col-sm-6">
                   <h4>Output Address(es)</h4>
-                  <section class="panel panel-default">
-                    <div class="table-responsive">
+                  <section className="panel panel-default">
+                    <div className="table-responsive">
                       <BlocksTransactionVin data={item.trade.vouts} />
                     </div>
                   </section>
                 </div>
               </section>
             </div>
-            <div class="panel-footer">
-              <section class="row m-b-md">
-                <div class="col-sm-6">
-                  <p><span class='glyphicon glyphicon-remove' aria-hidden='true'></span> Days Destroyed: {item.days_destroyed}</p>
+            <div className="panel-footer">
+              <section className="row m-b-md">
+                <div className="col-sm-6">
+                  <p><span className='glyphicon glyphicon-remove' aria-hidden='true'></span> Days Destroyed: {item.days_destroyed}</p>
                 </div>
-                <div class="col-sm-6">
+                <div className="col-sm-6">
                   <p>
-                    <span class='btc'>
-                      <span class='glyphicon glyphicon-bitcoin' aria-hidden='true'></span>
+                    <span className='btc'>
+                      <span className='glyphicon glyphicon-bitcoin' aria-hidden='true'></span>
                       Fee: 
                       <span title='{item.fee}'>{item.fee}</span>
                     </span>
                   </p>
-                  <p class='currency'>
-                    <span class='btc'>
-                      <span class='glyphicon glyphicon-bitcoin' aria-hidden='true'></span>
+                  <p className='currency'>
+                    <span className='btc'>
+                      <span className='glyphicon glyphicon-bitcoin' aria-hidden='true'></span>
                       Transaction Sum: 
                       <span title='{item.amount}'>{item.vout_sum}</span>
                     </span>

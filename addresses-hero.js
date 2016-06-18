@@ -32,36 +32,36 @@ const AddressesHero = React.createClass({
   },
   render: function() {
     return ( 
-      <div>
-        <section class="row m-b-md">
-            <div class="col-sm-12">
-              <h2><span class='glyphicon glyphicon-qrcode' aria-hidden='true'></span> Bitcoin <strong>Address</strong></h2>
-              <ul class='breadcrumb'>
+      <div className="container">
+        <section className="row m-b-md">
+            <div className="col-sm-12">
+              <h2><span className='glyphicon glyphicon-qrcode' aria-hidden='true'></span> Bitcoin <strong>Address</strong></h2>
+              <ul className='breadcrumb'>
                 <li><Link to={"/"}>Home</Link></li>
-                <li class='active'>Address {this.state.address}</li>
+                <li className='active'>Address {this.state.address}</li>
               </ul>
             </div>
         </section>
-        <section class="row m-b-md">
-            <div class="col-sm-12">
-              <section class="panel panel-default">
-                  <div class="table-responsive">
-                      <table class="table table-striped">
+        <section className="row m-b-md">
+            <div className="col-sm-12">
+              <section className="panel panel-default">
+                  <div className="table-responsive">
+                      <table className="table table-striped">
                           <tbody>
                               <tr>
-                                  <td><span class='glyphicon glyphicon-qrcode' aria-hidden='true'></span> Address</td>
+                                  <td><span className='glyphicon glyphicon-qrcode' aria-hidden='true'></span> Address</td>
                                   <td>{this.state.address}</td>
                               </tr>
                               <tr>
-                                  <td><span class='glyphicon glyphicon-bitcoin' aria-hidden='true'></span> Balance</td>
+                                  <td><span className='glyphicon glyphicon-bitcoin' aria-hidden='true'></span> Balance</td>
                                   <td>{this.state.balance}</td>
                               </tr>
                               <tr>
-                                  <td><span class='glyphicon glyphicon-bitcoin' aria-hidden='true'></span> Received</td>
+                                  <td><span className='glyphicon glyphicon-bitcoin' aria-hidden='true'></span> Received</td>
                                   <td>{this.state.totalreceived}</td>
                               </tr>
                               <tr>
-                                  <td><span class='glyphicon glyphicon-transfer' aria-hidden='true'></span> Transactions</td>
+                                  <td><span className='glyphicon glyphicon-transfer' aria-hidden='true'></span> Transactions</td>
                                   <td>{this.state.nb_txs}</td>
                               </tr>
                           </tbody>
