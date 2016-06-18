@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import React from 'react';
 import { Link } from 'react-router'
-const BlocksTransactionVin = require('./blocks-transaction-vin.js');
-const BlocksTransactionVout = require('./blocks-transaction-vout.js');
+import BlocksTransactionVin from './blocks-transaction-vin.js';
+import BlocksTransactionVout from './blocks-transaction-vout.js';
 const BlocksTransaction = React.createClass({
   render: function() {
     return ( 

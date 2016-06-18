@@ -35626,9 +35626,12 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _blocksTransaction = require('./blocks-transaction.js');
+
+var _blocksTransaction2 = _interopRequireDefault(_blocksTransaction);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var BlocksTransaction = require('./blocks-transaction.js');
 var BlocksSub = _react2.default.createClass({
   displayName: 'BlocksSub',
 
@@ -35681,7 +35684,7 @@ var BlocksSub = _react2.default.createClass({
               this.state.nb,
               ')'
             ),
-            _react2.default.createElement(BlocksTransaction, { data: this.state.data })
+            _react2.default.createElement(_blocksTransaction2.default, { data: this.state.data })
           )
         )
       )
@@ -35822,10 +35825,16 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouter = require('react-router');
 
+var _blocksTransactionVin = require('./blocks-transaction-vin.js');
+
+var _blocksTransactionVin2 = _interopRequireDefault(_blocksTransactionVin);
+
+var _blocksTransactionVout = require('./blocks-transaction-vout.js');
+
+var _blocksTransactionVout2 = _interopRequireDefault(_blocksTransactionVout);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var BlocksTransactionVin = require('./blocks-transaction-vin.js');
-var BlocksTransactionVout = require('./blocks-transaction-vout.js');
 var BlocksTransaction = _react2.default.createClass({
   displayName: 'BlocksTransaction',
 
@@ -35871,7 +35880,7 @@ var BlocksTransaction = _react2.default.createClass({
                   _react2.default.createElement(
                     'div',
                     { className: 'table-responsive' },
-                    _react2.default.createElement(BlocksTransactionVin, { data: item.trade.vins })
+                    _react2.default.createElement(_blocksTransactionVin2.default, { data: item.trade.vins })
                   )
                 )
               ),
@@ -35889,7 +35898,7 @@ var BlocksTransaction = _react2.default.createClass({
                   _react2.default.createElement(
                     'div',
                     { className: 'table-responsive' },
-                    _react2.default.createElement(BlocksTransactionVin, { data: item.trade.vouts })
+                    _react2.default.createElement(_blocksTransactionVin2.default, { data: item.trade.vouts })
                   )
                 )
               )
@@ -35966,10 +35975,16 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _blocksHero = require('./blocks-hero.js');
+
+var _blocksHero2 = _interopRequireDefault(_blocksHero);
+
+var _blocksSub = require('./blocks-sub.js');
+
+var _blocksSub2 = _interopRequireDefault(_blocksSub);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var BlocksHero = require('./blocks-hero.js');
-var BlocksSub = require('./blocks-sub.js');
 var Blocks = _react2.default.createClass({
   displayName: 'Blocks',
 
@@ -35989,7 +36004,7 @@ var Blocks = _react2.default.createClass({
             _react2.default.createElement(
               'div',
               { className: 'col-sm-12' },
-              _react2.default.createElement(BlocksHero, { url: "https://stageblockchain.bigearth.io/blocks/" + this.props.params.id + ".json" })
+              _react2.default.createElement(_blocksHero2.default, { url: "https://stageblockchain.bigearth.io/blocks/" + this.props.params.id + ".json" })
             )
           )
         )
@@ -36006,7 +36021,7 @@ var Blocks = _react2.default.createClass({
             _react2.default.createElement(
               'div',
               { className: 'col-sm-12' },
-              _react2.default.createElement(BlocksSub, { url: "https://stageblockchain.bigearth.io/blocks/transactions/" + this.props.params.id + ".json" })
+              _react2.default.createElement(_blocksSub2.default, { url: "https://stageblockchain.bigearth.io/blocks/transactions/" + this.props.params.id + ".json" })
             )
           )
         )
@@ -36590,10 +36605,16 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouter = require('react-router');
 
+var _transactionVin = require('./transaction-vin.js');
+
+var _transactionVin2 = _interopRequireDefault(_transactionVin);
+
+var _transactionVout = require('./transaction-vout.js');
+
+var _transactionVout2 = _interopRequireDefault(_transactionVout);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var TransactionVin = require('./transaction-vin.js');
-var TransactionVout = require('./transaction-vout.js');
 var TransactionsHero = _react2.default.createClass({
   displayName: 'TransactionsHero',
 
@@ -36700,7 +36721,7 @@ var TransactionsHero = _react2.default.createClass({
                   _react2.default.createElement(
                     'table',
                     { className: 'table table-striped' },
-                    _react2.default.createElement(TransactionVin, { vins: this.state.vins })
+                    _react2.default.createElement(_transactionVin2.default, { vins: this.state.vins })
                   )
                 )
               )
@@ -36722,7 +36743,7 @@ var TransactionsHero = _react2.default.createClass({
                   _react2.default.createElement(
                     'table',
                     { className: 'table table-striped' },
-                    _react2.default.createElement(TransactionVout, { vouts: this.state.vouts })
+                    _react2.default.createElement(_transactionVout2.default, { vouts: this.state.vouts })
                   )
                 )
               )

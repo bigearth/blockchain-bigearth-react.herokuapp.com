@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import React from 'react';
-const BlocksTransaction = require('./blocks-transaction.js');
+import BlocksTransaction from './blocks-transaction.js';
 const BlocksSub = React.createClass({
   getInitialState: function() {
     return {

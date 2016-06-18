@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import React from 'react';
-const BlocksHero = require('./blocks-hero.js');
-const BlocksSub = require('./blocks-sub.js');
+import BlocksHero from './blocks-hero.js';
+import BlocksSub from './blocks-sub.js';
 const Blocks = React.createClass({
   render: function() {
     return ( 

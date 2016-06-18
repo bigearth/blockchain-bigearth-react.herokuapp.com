@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import React from 'react';
 import { Link } from 'react-router'
-const TransactionVin = require('./transaction-vin.js');
-const TransactionVout = require('./transaction-vout.js');
+import TransactionVin from './transaction-vin.js';
+import TransactionVout from './transaction-vout.js';
 const TransactionsHero = React.createClass({
   getInitialState: function() {
     return {
