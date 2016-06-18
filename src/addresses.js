@@ -1,5 +1,5 @@
-const $ = require('jquery');
-const React = require('react');
+import $ from 'jquery';
+import React from 'react';
 const AddressesHero = require('./addresses-hero.js');
 const AddressesSub = require('./addresses-sub.js');
 const Addresses = React.createClass({

@@ -34912,13 +34912,23 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 module.exports = require('./lib/React');
 
 },{"./lib/React":89}],229:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const Link = require('react-router').Link;
-const AddressesHero = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Link = require('react-router').Link;
+var AddressesHero = _react2.default.createClass({
   displayName: 'AddressesHero',
 
-  getInitialState: function () {
+  getInitialState: function getInitialState() {
     return {
       data: [],
       address: '',
@@ -34927,8 +34937,8 @@ const AddressesHero = React.createClass({
       nb_txs: 0
     };
   },
-  componentDidMount: function () {
-    $.ajax({
+  componentDidMount: function componentDidMount() {
+    _jquery2.default.ajax({
       url: this.props.url,
       dataType: 'json',
       cache: false,
@@ -34946,40 +34956,40 @@ const AddressesHero = React.createClass({
       }.bind(this)
     });
   },
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'div',
       { className: 'container' },
-      React.createElement(
+      _react2.default.createElement(
         'section',
         { className: 'row m-b-md' },
-        React.createElement(
+        _react2.default.createElement(
           'div',
           { className: 'col-sm-12' },
-          React.createElement(
+          _react2.default.createElement(
             'h2',
             null,
-            React.createElement('span', { className: 'glyphicon glyphicon-qrcode', 'aria-hidden': 'true' }),
+            _react2.default.createElement('span', { className: 'glyphicon glyphicon-qrcode', 'aria-hidden': 'true' }),
             ' Bitcoin ',
-            React.createElement(
+            _react2.default.createElement(
               'strong',
               null,
               'Address'
             )
           ),
-          React.createElement(
+          _react2.default.createElement(
             'ul',
             { className: 'breadcrumb' },
-            React.createElement(
+            _react2.default.createElement(
               'li',
               null,
-              React.createElement(
+              _react2.default.createElement(
                 Link,
                 { to: "/" },
                 'Home'
               )
             ),
-            React.createElement(
+            _react2.default.createElement(
               'li',
               { className: 'active' },
               'Address ',
@@ -34988,79 +34998,79 @@ const AddressesHero = React.createClass({
           )
         )
       ),
-      React.createElement(
+      _react2.default.createElement(
         'section',
         { className: 'row m-b-md' },
-        React.createElement(
+        _react2.default.createElement(
           'div',
           { className: 'col-sm-12' },
-          React.createElement(
+          _react2.default.createElement(
             'section',
             { className: 'panel panel-default' },
-            React.createElement(
+            _react2.default.createElement(
               'div',
               { className: 'table-responsive' },
-              React.createElement(
+              _react2.default.createElement(
                 'table',
                 { className: 'table table-striped' },
-                React.createElement(
+                _react2.default.createElement(
                   'tbody',
                   null,
-                  React.createElement(
+                  _react2.default.createElement(
                     'tr',
                     null,
-                    React.createElement(
+                    _react2.default.createElement(
                       'td',
                       null,
-                      React.createElement('span', { className: 'glyphicon glyphicon-qrcode', 'aria-hidden': 'true' }),
+                      _react2.default.createElement('span', { className: 'glyphicon glyphicon-qrcode', 'aria-hidden': 'true' }),
                       ' Address'
                     ),
-                    React.createElement(
+                    _react2.default.createElement(
                       'td',
                       null,
                       this.state.address
                     )
                   ),
-                  React.createElement(
+                  _react2.default.createElement(
                     'tr',
                     null,
-                    React.createElement(
+                    _react2.default.createElement(
                       'td',
                       null,
-                      React.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
+                      _react2.default.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
                       ' Balance'
                     ),
-                    React.createElement(
+                    _react2.default.createElement(
                       'td',
                       null,
                       this.state.balance
                     )
                   ),
-                  React.createElement(
+                  _react2.default.createElement(
                     'tr',
                     null,
-                    React.createElement(
+                    _react2.default.createElement(
                       'td',
                       null,
-                      React.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
+                      _react2.default.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
                       ' Received'
                     ),
-                    React.createElement(
+                    _react2.default.createElement(
                       'td',
                       null,
                       this.state.totalreceived
                     )
                   ),
-                  React.createElement(
+                  _react2.default.createElement(
                     'tr',
                     null,
-                    React.createElement(
+                    _react2.default.createElement(
                       'td',
                       null,
-                      React.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
+                      _react2.default.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
                       ' Transactions'
                     ),
-                    React.createElement(
+                    _react2.default.createElement(
                       'td',
                       null,
                       this.state.nb_txs
@@ -35079,20 +35089,30 @@ const AddressesHero = React.createClass({
 module.exports = AddressesHero;
 
 },{"jquery":1,"react":228,"react-router":32}],230:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const AddressesTransaction = require('./addresses-transaction.js');
-const AddressesSub = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var AddressesTransaction = require('./addresses-transaction.js');
+var AddressesSub = _react2.default.createClass({
   displayName: 'AddressesSub',
 
-  getInitialState: function () {
+  getInitialState: function getInitialState() {
     return {
       data: [],
       txs: []
     };
   },
-  componentDidMount: function () {
-    $.ajax({
+  componentDidMount: function componentDidMount() {
+    _jquery2.default.ajax({
       url: this.props.url,
       dataType: 'json',
       cache: false,
@@ -35107,105 +35127,115 @@ const AddressesSub = React.createClass({
       }.bind(this)
     });
   },
-  render: function () {
-    return React.createElement(AddressesTransaction, { txs: this.state.txs });
+  render: function render() {
+    return _react2.default.createElement(AddressesTransaction, { txs: this.state.txs });
   }
 });
 module.exports = AddressesSub;
 
 },{"./addresses-transaction.js":231,"jquery":1,"react":228}],231:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const Link = require('react-router').Link;
-const AddressesTransaction = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Link = require('react-router').Link;
+var AddressesTransaction = _react2.default.createClass({
   displayName: 'AddressesTransaction',
 
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'div',
       { className: 'sub' },
-      React.createElement(
+      _react2.default.createElement(
         'div',
         { className: 'container' },
         this.props.txs.map(function (item, index) {
-          return React.createElement(
+          return _react2.default.createElement(
             'section',
             { key: index, className: 'panel panel-default' },
-            React.createElement(
+            _react2.default.createElement(
               'div',
               { className: 'table-responsive' },
-              React.createElement(
+              _react2.default.createElement(
                 'table',
                 { className: 'table table-striped' },
-                React.createElement(
+                _react2.default.createElement(
                   'tbody',
                   null,
-                  React.createElement(
+                  _react2.default.createElement(
                     'tr',
                     null,
-                    React.createElement(
+                    _react2.default.createElement(
                       'td',
                       null,
-                      React.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
+                      _react2.default.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
                       ' Transaction'
                     ),
-                    React.createElement(
+                    _react2.default.createElement(
                       'td',
                       null,
-                      React.createElement(
+                      _react2.default.createElement(
                         Link,
-                        { to: `/transactions/${ item.tx }` },
+                        { to: '/transactions/' + item.tx },
                         item.tx
                       )
                     )
                   ),
-                  React.createElement(
+                  _react2.default.createElement(
                     'tr',
                     null,
-                    React.createElement(
+                    _react2.default.createElement(
                       'td',
                       null,
-                      React.createElement('span', { className: 'glyphicon glyphicon-calendar', 'aria-hidden': 'true' }),
+                      _react2.default.createElement('span', { className: 'glyphicon glyphicon-calendar', 'aria-hidden': 'true' }),
                       ' Created'
                     ),
-                    React.createElement(
+                    _react2.default.createElement(
                       'td',
                       null,
                       item.time_utc
                     )
                   ),
-                  React.createElement(
+                  _react2.default.createElement(
                     'tr',
                     null,
-                    React.createElement(
+                    _react2.default.createElement(
                       'td',
                       null,
-                      React.createElement(
+                      _react2.default.createElement(
                         'span',
                         { className: 'btc' },
                         'Amount'
                       )
                     ),
-                    React.createElement(
+                    _react2.default.createElement(
                       'td',
                       null,
-                      React.createElement(
+                      _react2.default.createElement(
                         'span',
                         { className: 'btc', title: '{item.amount}' },
                         item.amount
                       )
                     )
                   ),
-                  React.createElement(
+                  _react2.default.createElement(
                     'tr',
                     null,
-                    React.createElement(
+                    _react2.default.createElement(
                       'td',
                       null,
-                      React.createElement('span', { className: 'glyphicon glyphicon-equalizer', 'aria-hidden': 'true' }),
+                      _react2.default.createElement('span', { className: 'glyphicon glyphicon-equalizer', 'aria-hidden': 'true' }),
                       ' Confirmations'
                     ),
-                    React.createElement(
+                    _react2.default.createElement(
                       'td',
                       null,
                       item.confirmations
@@ -35223,36 +35253,56 @@ const AddressesTransaction = React.createClass({
 module.exports = AddressesTransaction;
 
 },{"jquery":1,"react":228,"react-router":32}],232:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const AddressesHero = require('./addresses-hero.js');
-const AddressesSub = require('./addresses-sub.js');
-const Addresses = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var AddressesHero = require('./addresses-hero.js');
+var AddressesSub = require('./addresses-sub.js');
+var Addresses = _react2.default.createClass({
   displayName: 'Addresses',
 
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'div',
       null,
-      React.createElement(AddressesHero, { url: "https://stageblockchain.bigearth.io/addresses/" + this.props.params.id + ".json" }),
-      React.createElement(AddressesSub, { url: "https://btc.blockr.io/api/v1/address/txs/" + this.props.params.id + ".json" })
+      _react2.default.createElement(AddressesHero, { url: "https://stageblockchain.bigearth.io/addresses/" + this.props.params.id + ".json" }),
+      _react2.default.createElement(AddressesSub, { url: "https://btc.blockr.io/api/v1/address/txs/" + this.props.params.id + ".json" })
     );
   }
 });
 module.exports = Addresses;
 
 },{"./addresses-hero.js":229,"./addresses-sub.js":230,"jquery":1,"react":228}],233:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const Link = require('react-router').Link;
-const BlocksHero = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Link = require('react-router').Link;
+var BlocksHero = _react2.default.createClass({
   displayName: 'BlocksHero',
 
-  getInitialState: function () {
+  getInitialState: function getInitialState() {
     return {};
   },
-  componentDidMount: function () {
-    $.ajax({
+  componentDidMount: function componentDidMount() {
+    _jquery2.default.ajax({
       url: this.props.url,
       dataType: 'json',
       cache: false,
@@ -35279,265 +35329,265 @@ const BlocksHero = React.createClass({
       }.bind(this)
     });
   },
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'div',
       null,
-      React.createElement(
+      _react2.default.createElement(
         'h2',
         null,
-        React.createElement('span', { className: 'glyphicon glyphicon-th-large', 'aria-hidden': 'true' }),
+        _react2.default.createElement('span', { className: 'glyphicon glyphicon-th-large', 'aria-hidden': 'true' }),
         ' Bitcoin ',
-        React.createElement(
+        _react2.default.createElement(
           'strong',
           null,
           'Block'
         )
       ),
-      React.createElement(
+      _react2.default.createElement(
         'ul',
         { className: 'breadcrumb' },
-        React.createElement(
+        _react2.default.createElement(
           'li',
           null,
-          React.createElement(
+          _react2.default.createElement(
             Link,
             { to: "/" },
             'Home'
           )
         ),
-        React.createElement(
+        _react2.default.createElement(
           'li',
           { className: 'active' },
           'Block ',
           this.state.nb
         )
       ),
-      React.createElement(
+      _react2.default.createElement(
         'section',
         { className: 'panel panel-default' },
-        React.createElement(
+        _react2.default.createElement(
           'div',
           { className: 'table-responsive' },
-          React.createElement(
+          _react2.default.createElement(
             'table',
             { className: 'table table-striped' },
-            React.createElement(
+            _react2.default.createElement(
               'tbody',
               null,
-              React.createElement(
+              _react2.default.createElement(
                 'tr',
                 null,
-                React.createElement(
+                _react2.default.createElement(
                   'th',
                   null,
-                  React.createElement('span', { className: 'glyphicon glyphicon-equalizer', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-equalizer', 'aria-hidden': 'true' }),
                   ' Height'
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'td',
                   null,
                   this.state.nb
                 )
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'tr',
                 null,
-                React.createElement(
+                _react2.default.createElement(
                   'th',
                   null,
-                  React.createElement('span', { className: 'glyphicon glyphicon-calendar', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-calendar', 'aria-hidden': 'true' }),
                   ' Created'
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'td',
                   null,
                   this.state.time_utc
                 )
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'tr',
                 null,
-                React.createElement(
+                _react2.default.createElement(
                   'th',
                   { className: 'btc' },
-                  React.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
                   ' Trades Sum'
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'td',
                   null,
                   this.state.vout_sum
                 )
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'tr',
                 null,
-                React.createElement(
+                _react2.default.createElement(
                   'th',
                   null,
-                  React.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
                   ' Transactions'
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'td',
                   null,
                   this.state.nb_txs
                 )
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'tr',
                 null,
-                React.createElement(
+                _react2.default.createElement(
                   'th',
                   null,
-                  React.createElement('span', { className: 'glyphicon glyphicon-link', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-link', 'aria-hidden': 'true' }),
                   ' Difficulty'
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'td',
                   null,
                   this.state.difficulty
                 )
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'tr',
                 null,
-                React.createElement(
+                _react2.default.createElement(
                   'th',
                   { className: 'btc' },
-                  React.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
                   ' Fee'
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'td',
                   null,
                   this.state.fee
                 )
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'tr',
                 null,
-                React.createElement(
+                _react2.default.createElement(
                   'th',
                   null,
-                  React.createElement('span', { className: 'glyphicon glyphicon-random', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-random', 'aria-hidden': 'true' }),
                   ' Hash'
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'td',
                   null,
                   this.state.hash
                 )
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'tr',
                 null,
-                React.createElement(
+                _react2.default.createElement(
                   'th',
                   null,
-                  React.createElement('span', { className: 'glyphicon glyphicon-align-justify', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-align-justify', 'aria-hidden': 'true' }),
                   ' Version'
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'td',
                   null,
                   this.state.version
                 )
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'tr',
                 null,
-                React.createElement(
+                _react2.default.createElement(
                   'th',
                   null,
-                  React.createElement('span', { className: 'glyphicon glyphicon-equalizer', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-equalizer', 'aria-hidden': 'true' }),
                   ' Confirmations'
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'td',
                   null,
                   this.state.confirmations
                 )
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'tr',
                 null,
-                React.createElement(
+                _react2.default.createElement(
                   'th',
                   null,
-                  React.createElement('span', { className: 'glyphicon glyphicon-tree-conifer', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-tree-conifer', 'aria-hidden': 'true' }),
                   ' Merkle Root'
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'td',
                   null,
                   this.state.merkleroot
                 )
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'tr',
                 null,
-                React.createElement(
+                _react2.default.createElement(
                   'th',
                   null,
-                  React.createElement('span', { className: 'glyphicon glyphicon-menu-right', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-menu-right', 'aria-hidden': 'true' }),
                   ' Next Block Hash'
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'td',
                   null,
-                  React.createElement(
+                  _react2.default.createElement(
                     Link,
-                    { to: `/blocks/${ this.state.next_block_hash }` },
+                    { to: '/blocks/' + this.state.next_block_hash },
                     this.state.next_block_hash
                   )
                 )
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'tr',
                 null,
-                React.createElement(
+                _react2.default.createElement(
                   'th',
                   null,
-                  React.createElement('span', { className: 'glyphicon glyphicon-menu-left', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-menu-left', 'aria-hidden': 'true' }),
                   ' Prev Block Hash'
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'td',
                   null,
-                  React.createElement(
+                  _react2.default.createElement(
                     Link,
-                    { to: `/blocks/${ this.state.next_block_hash }` },
+                    { to: '/blocks/' + this.state.next_block_hash },
                     this.state.prev_block_hash
                   )
                 )
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'tr',
                 null,
-                React.createElement(
+                _react2.default.createElement(
                   'th',
                   null,
-                  React.createElement('span', { className: 'glyphicon glyphicon-scale', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-scale', 'aria-hidden': 'true' }),
                   ' Size'
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'td',
                   null,
                   this.state.size
                 )
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'tr',
                 null,
-                React.createElement(
+                _react2.default.createElement(
                   'th',
                   null,
-                  React.createElement('span', { className: 'glyphicon glyphicon-remove', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-remove', 'aria-hidden': 'true' }),
                   ' Days Destroyed'
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'td',
                   null,
                   this.state.days_destroyed
@@ -35554,20 +35604,30 @@ const BlocksHero = React.createClass({
 module.exports = BlocksHero;
 
 },{"jquery":1,"react":228,"react-router":32}],234:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const BlocksTransaction = require('./blocks-transaction.js');
-const BlocksSub = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var BlocksTransaction = require('./blocks-transaction.js');
+var BlocksSub = _react2.default.createClass({
   displayName: 'BlocksSub',
 
-  getInitialState: function () {
+  getInitialState: function getInitialState() {
     return {
       data: [],
       nb: 0
     };
   },
-  componentDidMount: function () {
-    $.ajax({
+  componentDidMount: function componentDidMount() {
+    _jquery2.default.ajax({
       url: this.props.url,
       dataType: 'json',
       cache: false,
@@ -35582,25 +35642,25 @@ const BlocksSub = React.createClass({
       }.bind(this)
     });
   },
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'div',
       { className: 'sub' },
-      React.createElement(
+      _react2.default.createElement(
         'section',
         { className: 'container' },
-        React.createElement(
+        _react2.default.createElement(
           'section',
           { className: 'row m-b-md' },
-          React.createElement(
+          _react2.default.createElement(
             'div',
             { className: 'col-sm-12' },
-            React.createElement(
+            _react2.default.createElement(
               'h3',
               null,
-              React.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
+              _react2.default.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
               ' Transactions (for ',
-              React.createElement(
+              _react2.default.createElement(
                 'strong',
                 null,
                 'Block'
@@ -35609,7 +35669,7 @@ const BlocksSub = React.createClass({
               this.state.nb,
               ')'
             ),
-            React.createElement(BlocksTransaction, { data: this.state.data })
+            _react2.default.createElement(BlocksTransaction, { data: this.state.data })
           )
         )
       )
@@ -35619,41 +35679,51 @@ const BlocksSub = React.createClass({
 module.exports = BlocksSub;
 
 },{"./blocks-transaction.js":237,"jquery":1,"react":228}],235:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const Link = require('react-router').Link;
-const BlocksTransactionVin = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Link = require('react-router').Link;
+var BlocksTransactionVin = _react2.default.createClass({
   displayName: 'BlocksTransactionVin',
 
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'table',
       { className: 'table table-striped' },
-      React.createElement(
+      _react2.default.createElement(
         'tbody',
         null,
         this.props.data.map(function (item, index) {
-          return React.createElement(
+          return _react2.default.createElement(
             'tr',
             { key: index },
-            React.createElement(
+            _react2.default.createElement(
               'td',
               null,
-              React.createElement('span', { className: 'glyphicon glyphicon-qrcode', 'aria-hidden': 'true' }),
+              _react2.default.createElement('span', { className: 'glyphicon glyphicon-qrcode', 'aria-hidden': 'true' }),
               ' ',
-              React.createElement(
+              _react2.default.createElement(
                 Link,
-                { to: `/addresses/${ item.address }` },
+                { to: '/addresses/' + item.address },
                 item.address
               )
             ),
-            React.createElement(
+            _react2.default.createElement(
               'td',
               { className: 'text-danger' },
-              React.createElement(
+              _react2.default.createElement(
                 'span',
                 { className: 'btc', title: '{item.amount}' },
-                React.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
+                _react2.default.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
                 ' ',
                 item.amount
               )
@@ -35667,42 +35737,52 @@ const BlocksTransactionVin = React.createClass({
 module.exports = BlocksTransactionVin;
 
 },{"jquery":1,"react":228,"react-router":32}],236:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const Link = require('react-router').Link;
-const BlocksTransactionVout = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Link = require('react-router').Link;
+var BlocksTransactionVout = _react2.default.createClass({
   displayName: 'BlocksTransactionVout',
 
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'table',
       { className: 'table table-striped' },
-      React.createElement(
+      _react2.default.createElement(
         'tbody',
         null,
         this.props.data.map(function (item, index) {
-          return React.createElement(
+          return _react2.default.createElement(
             'tr',
             { key: index },
-            React.createElement(
+            _react2.default.createElement(
               'td',
               null,
-              React.createElement('span', { className: 'glyphicon glyphicon-qrcode', 'aria-hidden': 'true' }),
+              _react2.default.createElement('span', { className: 'glyphicon glyphicon-qrcode', 'aria-hidden': 'true' }),
               ' ',
-              React.createElement(
+              _react2.default.createElement(
                 'a',
                 { href: '#' },
                 item.address
               ),
               ' '
             ),
-            React.createElement(
+            _react2.default.createElement(
               'td',
               { className: 'text-danger' },
-              React.createElement(
+              _react2.default.createElement(
                 'span',
                 { className: 'btc', title: '{item.amount}' },
-                React.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
+                _react2.default.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
                 ' ',
                 item.amount
               )
@@ -35716,124 +35796,134 @@ const BlocksTransactionVout = React.createClass({
 module.exports = BlocksTransactionVout;
 
 },{"jquery":1,"react":228,"react-router":32}],237:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const Link = require('react-router').Link;
-const BlocksTransactionVin = require('./blocks-transaction-vin.js');
-const BlocksTransactionVout = require('./blocks-transaction-vout.js');
-const BlocksTransaction = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Link = require('react-router').Link;
+var BlocksTransactionVin = require('./blocks-transaction-vin.js');
+var BlocksTransactionVout = require('./blocks-transaction-vout.js');
+var BlocksTransaction = _react2.default.createClass({
   displayName: 'BlocksTransaction',
 
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'div',
       null,
       this.props.data.map(function (item, index) {
-        return React.createElement(
+        return _react2.default.createElement(
           'div',
           { key: index, className: 'panel panel-default' },
-          React.createElement(
+          _react2.default.createElement(
             'div',
             { className: 'panel-heading' },
-            React.createElement(
+            _react2.default.createElement(
               'h3',
               { className: 'panel-title' },
-              React.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
-              React.createElement(
+              _react2.default.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
+              _react2.default.createElement(
                 Link,
-                { to: `/transactions/${ item.tx }` },
+                { to: '/transactions/' + item.tx },
                 item.tx
               )
             )
           ),
-          React.createElement(
+          _react2.default.createElement(
             'div',
             { className: 'panel-body' },
-            React.createElement(
+            _react2.default.createElement(
               'section',
               { className: 'row m-b-md' },
-              React.createElement(
+              _react2.default.createElement(
                 'div',
                 { className: 'col-sm-6' },
-                React.createElement(
+                _react2.default.createElement(
                   'h4',
                   null,
                   'Input Address(es)'
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'section',
                   { className: 'panel panel-default' },
-                  React.createElement(
+                  _react2.default.createElement(
                     'div',
                     { className: 'table-responsive' },
-                    React.createElement(BlocksTransactionVin, { data: item.trade.vins })
+                    _react2.default.createElement(BlocksTransactionVin, { data: item.trade.vins })
                   )
                 )
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'div',
                 { className: 'col-sm-6' },
-                React.createElement(
+                _react2.default.createElement(
                   'h4',
                   null,
                   'Output Address(es)'
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'section',
                   { className: 'panel panel-default' },
-                  React.createElement(
+                  _react2.default.createElement(
                     'div',
                     { className: 'table-responsive' },
-                    React.createElement(BlocksTransactionVin, { data: item.trade.vouts })
+                    _react2.default.createElement(BlocksTransactionVin, { data: item.trade.vouts })
                   )
                 )
               )
             )
           ),
-          React.createElement(
+          _react2.default.createElement(
             'div',
             { className: 'panel-footer' },
-            React.createElement(
+            _react2.default.createElement(
               'section',
               { className: 'row m-b-md' },
-              React.createElement(
+              _react2.default.createElement(
                 'div',
                 { className: 'col-sm-6' },
-                React.createElement(
+                _react2.default.createElement(
                   'p',
                   null,
-                  React.createElement('span', { className: 'glyphicon glyphicon-remove', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-remove', 'aria-hidden': 'true' }),
                   ' Days Destroyed: ',
                   item.days_destroyed
                 )
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'div',
                 { className: 'col-sm-6' },
-                React.createElement(
+                _react2.default.createElement(
                   'p',
                   null,
-                  React.createElement(
+                  _react2.default.createElement(
                     'span',
                     { className: 'btc' },
-                    React.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
+                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
                     'Fee:',
-                    React.createElement(
+                    _react2.default.createElement(
                       'span',
                       { title: '{item.fee}' },
                       item.fee
                     )
                   )
                 ),
-                React.createElement(
+                _react2.default.createElement(
                   'p',
                   { className: 'currency' },
-                  React.createElement(
+                  _react2.default.createElement(
                     'span',
                     { className: 'btc' },
-                    React.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
+                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
                     'Transaction Sum:',
-                    React.createElement(
+                    _react2.default.createElement(
                       'span',
                       { title: '{item.amount}' },
                       item.vout_sum
@@ -35851,47 +35941,57 @@ const BlocksTransaction = React.createClass({
 module.exports = BlocksTransaction;
 
 },{"./blocks-transaction-vin.js":235,"./blocks-transaction-vout.js":236,"jquery":1,"react":228,"react-router":32}],238:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const BlocksHero = require('./blocks-hero.js');
-const BlocksSub = require('./blocks-sub.js');
-const Blocks = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var BlocksHero = require('./blocks-hero.js');
+var BlocksSub = require('./blocks-sub.js');
+var Blocks = _react2.default.createClass({
   displayName: 'Blocks',
 
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'div',
       null,
-      React.createElement(
+      _react2.default.createElement(
         'div',
         { className: 'hero' },
-        React.createElement(
+        _react2.default.createElement(
           'section',
           { className: 'container' },
-          React.createElement(
+          _react2.default.createElement(
             'section',
             { className: 'row m-b-md' },
-            React.createElement(
+            _react2.default.createElement(
               'div',
               { className: 'col-sm-12' },
-              React.createElement(BlocksHero, { url: "https://stageblockchain.bigearth.io/blocks/" + this.props.params.id + ".json" })
+              _react2.default.createElement(BlocksHero, { url: "https://stageblockchain.bigearth.io/blocks/" + this.props.params.id + ".json" })
             )
           )
         )
       ),
-      React.createElement(
+      _react2.default.createElement(
         'div',
         { className: 'sub' },
-        React.createElement(
+        _react2.default.createElement(
           'section',
           { className: 'container' },
-          React.createElement(
+          _react2.default.createElement(
             'section',
             { className: 'row m-b-md' },
-            React.createElement(
+            _react2.default.createElement(
               'div',
               { className: 'col-sm-12' },
-              React.createElement(BlocksSub, { url: "https://stageblockchain.bigearth.io/blocks/transactions/" + this.props.params.id + ".json" })
+              _react2.default.createElement(BlocksSub, { url: "https://stageblockchain.bigearth.io/blocks/transactions/" + this.props.params.id + ".json" })
             )
           )
         )
@@ -35902,50 +36002,60 @@ const Blocks = React.createClass({
 module.exports = Blocks;
 
 },{"./blocks-hero.js":233,"./blocks-sub.js":234,"jquery":1,"react":228}],239:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const Link = require('react-router').Link;
-const HomepageBlock = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Link = require('react-router').Link;
+var HomepageBlock = _react2.default.createClass({
   displayName: 'HomepageBlock',
 
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'tbody',
       null,
       this.props.data.map(function (item, index) {
-        return React.createElement(
+        return _react2.default.createElement(
           'tr',
           { key: item.nb },
-          React.createElement(
+          _react2.default.createElement(
             'td',
             null,
-            React.createElement(
+            _react2.default.createElement(
               Link,
-              { to: `/blocks/${ item.nb }` },
+              { to: '/blocks/' + item.nb },
               item.nb
             )
           ),
-          React.createElement(
+          _react2.default.createElement(
             'td',
             null,
             item.time_utc
           ),
-          React.createElement(
+          _react2.default.createElement(
             'td',
             null,
             item.nb_txs
           ),
-          React.createElement(
+          _react2.default.createElement(
             'td',
             null,
             item.fee
           ),
-          React.createElement(
+          _react2.default.createElement(
             'td',
             null,
             item.size
           ),
-          React.createElement(
+          _react2.default.createElement(
             'td',
             null,
             item.days_destroyed
@@ -35958,17 +36068,27 @@ const HomepageBlock = React.createClass({
 module.exports = HomepageBlock;
 
 },{"jquery":1,"react":228,"react-router":32}],240:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const HomepageBlock = require('./homepage-block.js');
-const HomepageBlocks = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var HomepageBlock = require('./homepage-block.js');
+var HomepageBlocks = _react2.default.createClass({
   displayName: 'HomepageBlocks',
 
-  getInitialState: function () {
+  getInitialState: function getInitialState() {
     return { data: [] };
   },
-  componentDidMount: function () {
-    $.ajax({
+  componentDidMount: function componentDidMount() {
+    _jquery2.default.ajax({
       url: this.props.url,
       dataType: 'json',
       cache: false,
@@ -35980,80 +36100,80 @@ const HomepageBlocks = React.createClass({
       }.bind(this)
     });
   },
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'div',
       { className: 'sub' },
-      React.createElement(
+      _react2.default.createElement(
         'div',
         { className: 'container' },
-        React.createElement(
+        _react2.default.createElement(
           'h3',
           null,
-          React.createElement('span', { className: 'glyphicon glyphicon-th', 'aria-hidden': 'true' }),
+          _react2.default.createElement('span', { className: 'glyphicon glyphicon-th', 'aria-hidden': 'true' }),
           ' Last 20 ',
-          React.createElement(
+          _react2.default.createElement(
             'strong',
             null,
             'Bitcoin'
           ),
           ' Blocks'
         ),
-        React.createElement(
+        _react2.default.createElement(
           'section',
           { className: 'panel panel-default' },
-          React.createElement(
+          _react2.default.createElement(
             'div',
             { className: 'table-responsive' },
-            React.createElement(
+            _react2.default.createElement(
               'table',
               { className: 'table table-striped' },
-              React.createElement(
+              _react2.default.createElement(
                 'thead',
                 null,
-                React.createElement(
+                _react2.default.createElement(
                   'tr',
                   null,
-                  React.createElement(
+                  _react2.default.createElement(
                     'th',
                     null,
-                    React.createElement('span', { className: 'glyphicon glyphicon-equalizer', 'aria-hidden': 'true' }),
+                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-equalizer', 'aria-hidden': 'true' }),
                     ' Height'
                   ),
-                  React.createElement(
+                  _react2.default.createElement(
                     'th',
                     null,
-                    React.createElement('span', { className: 'glyphicon glyphicon-object-align-vertical', 'aria-hidden': 'true' }),
+                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-object-align-vertical', 'aria-hidden': 'true' }),
                     ' Created'
                   ),
-                  React.createElement(
+                  _react2.default.createElement(
                     'th',
                     null,
-                    React.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
+                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
                     ' Transactions'
                   ),
-                  React.createElement(
+                  _react2.default.createElement(
                     'th',
                     null,
                     ' ',
-                    React.createElement('span', { className: 'btc glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
+                    _react2.default.createElement('span', { className: 'btc glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
                     ' Fee '
                   ),
-                  React.createElement(
+                  _react2.default.createElement(
                     'th',
                     null,
-                    React.createElement('span', { className: 'glyphicon glyphicon-scale', 'aria-hidden': 'true' }),
+                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-scale', 'aria-hidden': 'true' }),
                     ' Size'
                   ),
-                  React.createElement(
+                  _react2.default.createElement(
                     'th',
                     null,
-                    React.createElement('span', { className: 'glyphicon glyphicon-remove', 'aria-hidden': 'true' }),
+                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-remove', 'aria-hidden': 'true' }),
                     ' Days Destroyed'
                   )
                 )
               ),
-              React.createElement(HomepageBlock, { data: this.state.data })
+              _react2.default.createElement(HomepageBlock, { data: this.state.data })
             )
           )
         )
@@ -36064,12 +36184,22 @@ const HomepageBlocks = React.createClass({
 module.exports = HomepageBlocks;
 
 },{"./homepage-block.js":239,"jquery":1,"react":228}],241:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const HomepageHero = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var HomepageHero = _react2.default.createClass({
   displayName: 'HomepageHero',
 
-  getInitialState: function () {
+  getInitialState: function getInitialState() {
     return {
       value: 0,
       all: 21000000,
@@ -36081,8 +36211,8 @@ const HomepageHero = React.createClass({
       retarget_in: 0
     };
   },
-  componentDidMount: function () {
-    $.ajax({
+  componentDidMount: function componentDidMount() {
+    _jquery2.default.ajax({
       url: this.props.url,
       dataType: 'json',
       cache: false,
@@ -36105,38 +36235,38 @@ const HomepageHero = React.createClass({
       }.bind(this)
     });
   },
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'div',
       { className: 'hero' },
-      React.createElement(
+      _react2.default.createElement(
         'section',
         { className: 'container' },
-        React.createElement(
+        _react2.default.createElement(
           'section',
           { className: 'row m-b-md' },
-          React.createElement(
+          _react2.default.createElement(
             'div',
             { className: 'col-sm-4' },
-            React.createElement(
+            _react2.default.createElement(
               'h2',
               { className: 'm-b-xs' },
-              React.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
+              _react2.default.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
               ' Bitcoin ',
-              React.createElement(
+              _react2.default.createElement(
                 'strong',
                 null,
                 'Markets'
               )
             ),
-            React.createElement(
+            _react2.default.createElement(
               'p',
               null,
               'Market Value: $',
               this.state.value,
               ' per coin'
             ),
-            React.createElement(
+            _react2.default.createElement(
               'p',
               null,
               this.state.current,
@@ -36144,80 +36274,80 @@ const HomepageHero = React.createClass({
               this.state.all,
               ' coins mined'
             ),
-            React.createElement(
+            _react2.default.createElement(
               'p',
               null,
               '%',
               this.state.perc,
               ' of total coins'
             ),
-            React.createElement(
+            _react2.default.createElement(
               'p',
               null,
               'Market Cap $',
               this.state.market_cap
             )
           ),
-          React.createElement(
+          _react2.default.createElement(
             'div',
             { className: 'col-sm-4' },
-            React.createElement(
+            _react2.default.createElement(
               'h2',
               { className: 'm-b-xs' },
-              React.createElement('span', { className: 'glyphicon glyphicon-link', 'aria-hidden': 'true' }),
+              _react2.default.createElement('span', { className: 'glyphicon glyphicon-link', 'aria-hidden': 'true' }),
               ' Bitcoin ',
-              React.createElement(
+              _react2.default.createElement(
                 'strong',
                 null,
                 'Difficulty'
               )
             ),
-            React.createElement(
+            _react2.default.createElement(
               'p',
               null,
               this.state.difficulty
             ),
-            React.createElement(
+            _react2.default.createElement(
               'p',
               null,
               'Difficulty is a measure of how difficult it is to find a new block below a given target.'
             )
           ),
-          React.createElement(
+          _react2.default.createElement(
             'div',
             { className: 'col-sm-4' },
-            React.createElement(
+            _react2.default.createElement(
               'h2',
               { className: 'm-b-xs' },
-              React.createElement('span', { className: 'glyphicon glyphicon-signal', 'aria-hidden': 'true' }),
+              _react2.default.createElement('span', { className: 'glyphicon glyphicon-signal', 'aria-hidden': 'true' }),
               ' Next ',
-              React.createElement(
+              _react2.default.createElement(
                 'strong',
                 null,
                 'Difficulty'
               ),
               ' ',
-              React.createElement(
+              _react2.default.createElement(
                 'span',
                 { className: 'small' },
                 '(estimate)'
               )
             ),
             ' ',
-            React.createElement(
+            _react2.default.createElement(
               'p',
               null,
               this.state.next_difficulty
             ),
             ' ',
-            React.createElement(
+            _react2.default.createElement(
               'p',
               null,
               this.state.next_difficulty_perc,
               ' change to current'
             ),
             ' ',
-            React.createElement(
+            _react2.default.createElement(
               'p',
               null,
               this.state.retarget_in,
@@ -36232,85 +36362,129 @@ const HomepageHero = React.createClass({
 module.exports = HomepageHero;
 
 },{"jquery":1,"react":228}],242:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const HomepageHero = require('./homepage-hero.js');
-const HomepageBlocks = require('./homepage-blocks.js');
-const Homepage = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var HomepageHero = require('./homepage-hero.js');
+var HomepageBlocks = require('./homepage-blocks.js');
+var Homepage = _react2.default.createClass({
   displayName: 'Homepage',
 
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'div',
       null,
-      React.createElement(HomepageHero, { url: 'https://stageblockchain.bigearth.io/coin.json' }),
-      React.createElement(HomepageBlocks, { url: 'https://stageblockchain.bigearth.io/blocks/416614,416613,416612,416611,416610,416609,416608,416607,416606,416605,416604,416603,416602,416601,416600,416599,416598,416597,416596,416595.json' })
+      _react2.default.createElement(HomepageHero, { url: 'https://stageblockchain.bigearth.io/coin.json' }),
+      _react2.default.createElement(HomepageBlocks, { url: 'https://stageblockchain.bigearth.io/blocks/416614,416613,416612,416611,416610,416609,416608,416607,416606,416605,416604,416603,416602,416601,416600,416599,416598,416597,416596,416595.json' })
     );
   }
 });
 module.exports = Homepage;
 
 },{"./homepage-blocks.js":240,"./homepage-hero.js":241,"jquery":1,"react":228}],243:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const ReactDOM = require('react-dom');
-const Router = require('react-router').Router;
-const Route = require('react-router').Route;
-const Link = require('react-router').Link;
-const Homepage = require('./homepage.js');
-const Blocks = require('./blocks.js');
-const Transactions = require('./transactions.js');
-const Addresses = require('./addresses.js');
-const BlockchainBigEarth = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _reactRouter = require('react-router');
+
+var _homepage = require('./homepage.js');
+
+var _homepage2 = _interopRequireDefault(_homepage);
+
+var _blocks = require('./blocks.js');
+
+var _blocks2 = _interopRequireDefault(_blocks);
+
+var _transactions = require('./transactions.js');
+
+var _transactions2 = _interopRequireDefault(_transactions);
+
+var _addresses = require('./addresses.js');
+
+var _addresses2 = _interopRequireDefault(_addresses);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var BlockchainBigEarth = _react2.default.createClass({
   displayName: 'BlockchainBigEarth',
 
-  render: function () {
-    return React.createElement(Homepage, null);
+  render: function render() {
+    return _react2.default.createElement(_homepage2.default, null);
   }
 });
 
-ReactDOM.render(React.createElement(
-  Router,
+_reactDom2.default.render(_react2.default.createElement(
+  _reactRouter.Router,
   null,
-  React.createElement(Route, { path: '/', component: BlockchainBigEarth }),
-  React.createElement(Route, { path: '/blocks/:id', component: Blocks }),
-  React.createElement(Route, { path: '/transactions/:id', component: Transactions }),
-  React.createElement(Route, { path: '/addresses/:id', component: Addresses })
+  _react2.default.createElement(_reactRouter.Route, { path: '/', component: BlockchainBigEarth }),
+  _react2.default.createElement(_reactRouter.Route, { path: '/blocks/:id', component: _blocks2.default }),
+  _react2.default.createElement(_reactRouter.Route, { path: '/transactions/:id', component: _transactions2.default }),
+  _react2.default.createElement(_reactRouter.Route, { path: '/addresses/:id', component: _addresses2.default })
 ), document.getElementById('container'));
 
 },{"./addresses.js":232,"./blocks.js":238,"./homepage.js":242,"./transactions.js":247,"jquery":1,"react":228,"react-dom":2,"react-router":32}],244:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const Link = require('react-router').Link;
-const TransactionVin = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Link = require('react-router').Link;
+var TransactionVin = _react2.default.createClass({
   displayName: 'TransactionVin',
 
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'tbody',
       null,
       this.props.vins.map(function (item, index) {
-        return React.createElement(
+        return _react2.default.createElement(
           'tr',
           { key: index },
-          React.createElement(
+          _react2.default.createElement(
             'td',
             null,
-            React.createElement('span', { className: 'glyphicon glyphicon-qrcode', 'aria-hidden': 'true' }),
+            _react2.default.createElement('span', { className: 'glyphicon glyphicon-qrcode', 'aria-hidden': 'true' }),
             ' ',
-            React.createElement(
+            _react2.default.createElement(
               Link,
-              { to: `/addresses/${ item.address }` },
+              { to: '/addresses/' + item.address },
               item.address
             )
           ),
-          React.createElement(
+          _react2.default.createElement(
             'td',
             { className: 'text-danger' },
-            React.createElement(
+            _react2.default.createElement(
               'span',
               { className: 'btc', title: '{item.amount}' },
-              React.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
+              _react2.default.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
               ' ',
               item.amount
             )
@@ -36323,38 +36497,48 @@ const TransactionVin = React.createClass({
 module.exports = TransactionVin;
 
 },{"jquery":1,"react":228,"react-router":32}],245:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const Link = require('react-router').Link;
-const TransactionVout = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Link = require('react-router').Link;
+var TransactionVout = _react2.default.createClass({
   displayName: 'TransactionVout',
 
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'tbody',
       null,
       this.props.vouts.map(function (item, index) {
-        return React.createElement(
+        return _react2.default.createElement(
           'tr',
           { key: index },
-          React.createElement(
+          _react2.default.createElement(
             'td',
             null,
-            React.createElement('span', { className: 'glyphicon glyphicon-qrcode', 'aria-hidden': 'true' }),
+            _react2.default.createElement('span', { className: 'glyphicon glyphicon-qrcode', 'aria-hidden': 'true' }),
             ' ',
-            React.createElement(
+            _react2.default.createElement(
               Link,
-              { to: `/addresses/${ item.address }` },
+              { to: '/addresses/' + item.address },
               item.address
             )
           ),
-          React.createElement(
+          _react2.default.createElement(
             'td',
             { className: 'text-danger' },
-            React.createElement(
+            _react2.default.createElement(
               'span',
               { className: 'btc', title: '{item.amount}' },
-              React.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
+              _react2.default.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
               ' ',
               item.amount
             )
@@ -36367,23 +36551,33 @@ const TransactionVout = React.createClass({
 module.exports = TransactionVout;
 
 },{"jquery":1,"react":228,"react-router":32}],246:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const Link = require('react-router').Link;
-const TransactionVin = require('./transaction-vin.js');
-const TransactionVout = require('./transaction-vout.js');
-const TransactionsHero = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Link = require('react-router').Link;
+var TransactionVin = require('./transaction-vin.js');
+var TransactionVout = require('./transaction-vout.js');
+var TransactionsHero = _react2.default.createClass({
   displayName: 'TransactionsHero',
 
-  getInitialState: function () {
+  getInitialState: function getInitialState() {
     return {
       data: [],
       vins: [],
       vouts: []
     };
   },
-  componentDidMount: function () {
-    $.ajax({
+  componentDidMount: function componentDidMount() {
+    _jquery2.default.ajax({
       url: this.props.url,
       dataType: 'json',
       cache: false,
@@ -36399,158 +36593,158 @@ const TransactionsHero = React.createClass({
       }.bind(this)
     });
   },
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'div',
       { className: 'col-sm-12' },
-      React.createElement(
+      _react2.default.createElement(
         'h2',
         null,
-        React.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
+        _react2.default.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
         ' Bitcoin ',
-        React.createElement(
+        _react2.default.createElement(
           'strong',
           null,
           'Transaction'
         )
       ),
-      React.createElement(
+      _react2.default.createElement(
         'ul',
         { className: 'breadcrumb' },
-        React.createElement(
+        _react2.default.createElement(
           'li',
           null,
-          React.createElement(
+          _react2.default.createElement(
             Link,
             { to: "/" },
             'Home'
           )
         ),
-        React.createElement(
+        _react2.default.createElement(
           'li',
           null,
-          React.createElement(
+          _react2.default.createElement(
             Link,
-            { to: `/blocks/${ this.state.data.block }` },
+            { to: '/blocks/' + this.state.data.block },
             this.state.data.block
           )
         ),
-        React.createElement(
+        _react2.default.createElement(
           'li',
           { className: 'active' },
           'Transaction ',
           this.state.data.tx
         )
       ),
-      React.createElement(
+      _react2.default.createElement(
         'div',
         { className: 'panel panel-default' },
-        React.createElement(
+        _react2.default.createElement(
           'div',
           { className: 'panel-heading' },
-          React.createElement(
+          _react2.default.createElement(
             'h3',
             { className: 'panel-title' },
-            React.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
+            _react2.default.createElement('span', { className: 'glyphicon glyphicon-transfer', 'aria-hidden': 'true' }),
             this.state.data.tx
           )
         ),
-        React.createElement(
+        _react2.default.createElement(
           'div',
           { className: 'panel-body' },
-          React.createElement(
+          _react2.default.createElement(
             'section',
             { className: 'row m-b-md' },
-            React.createElement(
+            _react2.default.createElement(
               'div',
               { className: 'col-sm-6' },
-              React.createElement(
+              _react2.default.createElement(
                 'h4',
                 null,
                 'Input Address(es)'
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'section',
                 { className: 'panel panel-default' },
-                React.createElement(
+                _react2.default.createElement(
                   'div',
                   { className: 'table-responsive' },
-                  React.createElement(
+                  _react2.default.createElement(
                     'table',
                     { className: 'table table-striped' },
-                    React.createElement(TransactionVin, { vins: this.state.vins })
+                    _react2.default.createElement(TransactionVin, { vins: this.state.vins })
                   )
                 )
               )
             ),
-            React.createElement(
+            _react2.default.createElement(
               'div',
               { className: 'col-sm-6' },
-              React.createElement(
+              _react2.default.createElement(
                 'h4',
                 null,
                 'Output Address(es)'
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'section',
                 { className: 'panel panel-default' },
-                React.createElement(
+                _react2.default.createElement(
                   'div',
                   { className: 'table-responsive' },
-                  React.createElement(
+                  _react2.default.createElement(
                     'table',
                     { className: 'table table-striped' },
-                    React.createElement(TransactionVout, { vouts: this.state.vouts })
+                    _react2.default.createElement(TransactionVout, { vouts: this.state.vouts })
                   )
                 )
               )
             )
           )
         ),
-        React.createElement(
+        _react2.default.createElement(
           'div',
           { className: 'panel-footer' },
-          React.createElement(
+          _react2.default.createElement(
             'section',
             { className: 'row m-b-md' },
-            React.createElement(
+            _react2.default.createElement(
               'div',
               { className: 'col-sm-6' },
-              React.createElement(
+              _react2.default.createElement(
                 'p',
                 null,
-                React.createElement('span', { className: 'glyphicon glyphicon-remove', 'aria-hidden': 'true' }),
+                _react2.default.createElement('span', { className: 'glyphicon glyphicon-remove', 'aria-hidden': 'true' }),
                 ' Days Destroyed: ',
                 this.state.data.days_destroyed
               )
             ),
-            React.createElement(
+            _react2.default.createElement(
               'div',
               { className: 'col-sm-6' },
-              React.createElement(
+              _react2.default.createElement(
                 'p',
                 null,
-                React.createElement(
+                _react2.default.createElement(
                   'span',
                   { className: 'btc' },
-                  React.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
                   'Fee:',
-                  React.createElement(
+                  _react2.default.createElement(
                     'span',
                     { title: '{this.state.data.fee}' },
                     this.state.data.fee
                   )
                 )
               ),
-              React.createElement(
+              _react2.default.createElement(
                 'p',
                 { className: 'currency' },
-                React.createElement(
+                _react2.default.createElement(
                   'span',
                   { className: 'btc' },
-                  React.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
+                  _react2.default.createElement('span', { className: 'glyphicon glyphicon-bitcoin', 'aria-hidden': 'true' }),
                   'Transaction Sum:',
-                  React.createElement(
+                  _react2.default.createElement(
                     'span',
                     { title: '{this.state.data.amount}' },
                     this.state.data.amount
@@ -36568,23 +36762,33 @@ const TransactionsHero = React.createClass({
 module.exports = TransactionsHero;
 
 },{"./transaction-vin.js":244,"./transaction-vout.js":245,"jquery":1,"react":228,"react-router":32}],247:[function(require,module,exports){
-const $ = require('jquery');
-const React = require('react');
-const TransactionsHero = require('./transactions-hero.js');
-const Transactions = React.createClass({
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var TransactionsHero = require('./transactions-hero.js');
+var Transactions = _react2.default.createClass({
   displayName: 'Transactions',
 
-  render: function () {
-    return React.createElement(
+  render: function render() {
+    return _react2.default.createElement(
       'div',
       { className: 'hero' },
-      React.createElement(
+      _react2.default.createElement(
         'section',
         { className: 'container' },
-        React.createElement(
+        _react2.default.createElement(
           'section',
           { className: 'row m-b-md' },
-          React.createElement(TransactionsHero, { url: "https://stageblockchain.bigearth.io/transactions/" + this.props.params.id + ".json" })
+          _react2.default.createElement(TransactionsHero, { url: "https://stageblockchain.bigearth.io/transactions/" + this.props.params.id + ".json" })
         )
       )
     );

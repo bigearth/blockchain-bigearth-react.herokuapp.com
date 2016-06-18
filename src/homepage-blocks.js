@@ -1,5 +1,5 @@
-const $ = require('jquery');
-const React = require('react');
+import $ from 'jquery';
+import React from 'react';
 const HomepageBlock = require('./homepage-block.js');
 const HomepageBlocks = React.createClass({
   getInitialState: function() {

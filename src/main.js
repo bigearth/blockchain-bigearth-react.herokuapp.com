@@ -1,13 +1,11 @@
-const $ = require('jquery');
-const React = require('react');
-const ReactDOM = require('react-dom');
-const Router = require('react-router').Router
-const Route = require('react-router').Route
-const Link = require('react-router').Link
-const Homepage = require('./homepage.js');
-const Blocks = require('./blocks.js');
-const Transactions = require('./transactions.js');
-const Addresses = require('./addresses.js');
+import $ from 'jquery';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Router, Route, Link } from 'react-router'
+import Homepage from './homepage.js';
+import Blocks from './blocks.js';
+import Transactions from './transactions.js';
+import Addresses from './addresses.js';
 const BlockchainBigEarth = React.createClass({
   render: function() {
     return ( 

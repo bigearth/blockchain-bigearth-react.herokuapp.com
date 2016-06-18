@@ -1,5 +1,5 @@
-const $ = require('jquery');
-const React = require('react');
+import $ from 'jquery';
+import React from 'react';
 const TransactionsHero = require('./transactions-hero.js');
 const Transactions = React.createClass({
   render: function() {

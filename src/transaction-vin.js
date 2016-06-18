@@ -1,5 +1,5 @@
-const $ = require('jquery');
-const React = require('react');
+import $ from 'jquery';
+import React from 'react';
 const Link = require('react-router').Link
 const TransactionVin = React.createClass({
   render: function() {
