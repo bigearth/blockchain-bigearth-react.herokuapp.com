@@ -9,3 +9,5 @@ It's using [Webpack](https://webpack.github.io/) to transpile [SCSS](http://sass
 It's also transpiling ES6 -> ES5 w/ [Babel](http://babeljs.io/) and the [ES2015](http://babeljs.io/docs/plugins/preset-es2015/) and [React](http://babeljs.io/docs/plugins/preset-react/) presets.
 
 There is also [Jest](https://facebook.github.io/jest/) and [Flow](https://flowtype.org/) integration for testing.
+
+It's available under the [MIT License](https://opensource.org/licenses/MIT).
