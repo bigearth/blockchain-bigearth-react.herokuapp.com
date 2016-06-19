@@ -2,7 +2,7 @@
 
 This is a [ReactJS](https://facebook.github.io/react/) port of [blockchain.bigearth.io](http://blockchain.bigearth.io/). 
 
-It's using [React Router](https://github.com/reactjs/react-router) for routing and good ole [jQuery](https://jquery.com/) for fetch the data. Nice and simple like.
+It's using [React Router](https://github.com/reactjs/react-router) for routing and good ole [jQuery](https://jquery.com/) to fetch the data. Nice and simple like.
 
 It's using [Webpack](https://webpack.github.io/) to transpile [SCSS](http://sass-lang.com/) to CSS via the [css-loader](https://github.com/webpack/css-loader) and [sass-loader](https://github.com/jtangelder/sass-loader).
 
