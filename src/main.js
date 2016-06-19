@@ -1,5 +1,5 @@
 /* @flow */
-require("../core.css");
+require("../core.scss")
 
 import $ from 'jquery';
 import React from 'react';
