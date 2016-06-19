@@ -2,8 +2,11 @@ import $ from 'jquery';
 import React from 'react';
 import BlocksHero from './blocks-hero.js';
 import BlocksSub from './blocks-sub.js';
-const Blocks = React.createClass({
-  render: function() {
+class Blocks extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return ( 
       <div>
         <div className='hero'>
@@ -27,5 +30,6 @@ const Blocks = React.createClass({
       </div>
     );
   }
-});
-module.exports = Blocks;
+}
+
+export default Blocks;

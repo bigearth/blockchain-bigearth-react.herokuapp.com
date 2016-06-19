@@ -1,13 +1,17 @@
 import $ from 'jquery';
 import React from 'react';
 import { Link } from 'react-router'
-const AddressVin = React.createClass({
-  render: function() {
+class AddressVin extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return ( 
       <tbody>
         Foobar
       </tbody>
     );
   }
-});
-module.exports = AddressVin;
+}
+
+export default AddressVin;

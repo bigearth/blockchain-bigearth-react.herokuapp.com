@@ -1,11 +1,14 @@
 import $ from 'jquery';
 import React from 'react';
 import HomepageBlock from './homepage-block.js';
-const HomepageBlocks = React.createClass({
-  getInitialState: function() {
-    return {data: []};
-  },
-  componentDidMount: function() {
+class HomepageBlocks extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: []
+    };
+  }
+  componentDidMount() {
     $.ajax({
       url: this.props.url,
       dataType: 'json',
@@ -17,8 +20,8 @@ const HomepageBlocks = React.createClass({
         console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
-  },
-  render: function() {
+  }
+  render() {
     return ( 
       <div className='sub'>
         <div className='container'>
@@ -44,5 +47,6 @@ const HomepageBlocks = React.createClass({
       </div>
     );
   }
-});
-module.exports = HomepageBlocks;
+}
+
+export default HomepageBlocks;

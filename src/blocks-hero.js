@@ -1,11 +1,14 @@
 import $ from 'jquery';
 import React from 'react';
 import { Link } from 'react-router'
-const BlocksHero = React.createClass({
-  getInitialState: function() {
-    return { };
-  },
-  componentDidMount: function() {
+class BlocksHero extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      nb: 0
+    };
+  }
+  componentDidMount() {
     $.ajax({
       url: this.props.url,
       dataType: 'json',
@@ -32,8 +35,8 @@ const BlocksHero = React.createClass({
         console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
-  },
-  render: function() {
+  }
+  render() {
     return ( 
       <div>
         <h2><span className='glyphicon glyphicon-th-large' aria-hidden='true'></span> Bitcoin <strong>Block</strong></h2>
@@ -108,6 +111,6 @@ const BlocksHero = React.createClass({
       </div>
     );
   }
-});
+}
 
-module.exports = BlocksHero;
+export default BlocksHero;

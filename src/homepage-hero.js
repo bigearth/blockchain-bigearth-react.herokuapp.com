@@ -1,8 +1,9 @@
 import $ from 'jquery';
 import React from 'react';
-const HomepageHero = React.createClass({
-  getInitialState: function() {
-    return {
+class HomepageHero extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       value: 0,
       all: 21000000,
       current: 0,
@@ -12,8 +13,8 @@ const HomepageHero = React.createClass({
       next_difficulty_perc: 0,
       retarget_in: 0
     };
-  },
-  componentDidMount: function() {
+  }
+  componentDidMount() {
     $.ajax({
       url: this.props.url,
       dataType: 'json',
@@ -36,8 +37,8 @@ const HomepageHero = React.createClass({
         console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
-  },
-  render: function() {
+  }
+  render() {
     return ( 
       <div className='hero'>
         <section className='container'>
@@ -62,5 +63,6 @@ const HomepageHero = React.createClass({
       </div>
     );
   }
-});
-module.exports = HomepageHero;
+}
+
+export default HomepageHero;

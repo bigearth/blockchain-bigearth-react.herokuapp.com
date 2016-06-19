@@ -1,17 +1,18 @@
 import $ from 'jquery';
 import React from 'react';
 import { Link } from 'react-router'
-const AddressesHero = React.createClass({
-  getInitialState: function() {
-    return {
+class AddressesHero extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       data: [],
       address: '',
       balance: 0,
       totalreceived: 0,
       nb_txs: 0
     };
-  },
-  componentDidMount: function() {
+  }
+  componentDidMount() {
     $.ajax({
       url: this.props.url,
       dataType: 'json',
@@ -29,8 +30,8 @@ const AddressesHero = React.createClass({
         console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
-  },
-  render: function() {
+  }
+  render() {
     return ( 
       <div className="container">
         <section className="row m-b-md">
@@ -73,6 +74,6 @@ const AddressesHero = React.createClass({
       </div>
     );
   }
-});
+}
 
-module.exports = AddressesHero;
+export default AddressesHero;

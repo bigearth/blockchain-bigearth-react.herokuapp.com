@@ -1,8 +1,13 @@
 import $ from 'jquery';
 import React from 'react';
 import { Link } from 'react-router'
-const HomepageBlock = React.createClass({
-  render: function() {
+class HomepageBlock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
+  render() {
     return ( 
       <tbody>
         {
@@ -20,5 +25,6 @@ const HomepageBlock = React.createClass({
       </tbody>
     );
   }
-});
-module.exports = HomepageBlock;
+}
+
+export default HomepageBlock;

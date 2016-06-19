@@ -1,8 +1,11 @@
 import $ from 'jquery';
 import React from 'react';
 import { Link } from 'react-router'
-const BlocksTransactionVout = React.createClass({
-  render: function() {
+class BlocksTransactionVout extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return ( 
       <table className="table table-striped">
         <tbody>
@@ -20,5 +23,6 @@ const BlocksTransactionVout = React.createClass({
       </table>
     );
   }
-});
-module.exports = BlocksTransactionVout;
+}
+
+export default BlocksTransactionVout;

@@ -2,8 +2,11 @@ import $ from 'jquery';
 import React from 'react';
 import AddressesHero from './addresses-hero.js';
 import AddressesSub from './addresses-sub.js';
-const Addresses = React.createClass({
-  render: function() {
+class Addresses extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return ( 
       <div>
         <AddressesHero url={"https://stageblockchain.bigearth.io/addresses/" + this.props.params.id + ".json"} />
@@ -11,5 +14,6 @@ const Addresses = React.createClass({
       </div>
     );
   }
-});
-module.exports = Addresses;
+}
+
+export default Addresses;

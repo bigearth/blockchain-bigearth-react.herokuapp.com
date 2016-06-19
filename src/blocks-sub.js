@@ -1,14 +1,15 @@
 import $ from 'jquery';
 import React from 'react';
 import BlocksTransaction from './blocks-transaction.js';
-const BlocksSub = React.createClass({
-  getInitialState: function() {
-    return {
+class BlocksSub extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       data: [],
       nb: 0 
     };
-  },
-  componentDidMount: function() {
+  }
+  componentDidMount() {
     $.ajax({
       url: this.props.url,
       dataType: 'json',
@@ -23,8 +24,8 @@ const BlocksSub = React.createClass({
         console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
-  },
-  render: function() {
+  }
+  render() {
     return ( 
       <div className='sub'>
         <section className='container'>
@@ -38,5 +39,6 @@ const BlocksSub = React.createClass({
       </div>
     );
   }
-});
-module.exports = BlocksSub;
+}
+
+export default BlocksSub;

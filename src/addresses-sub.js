@@ -1,14 +1,15 @@
 import $ from 'jquery';
 import React from 'react';
 import AddressesTransaction from './addresses-transaction.js';
-const AddressesSub = React.createClass({
-  getInitialState: function() {
-    return {
+class AddressesSub extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       data: [],
       txs: []
     };
-  },
-  componentDidMount: function() {
+  }
+  componentDidMount() {
     $.ajax({
       url: this.props.url,
       dataType: 'json',
@@ -23,11 +24,12 @@ const AddressesSub = React.createClass({
         console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
-  },
-  render: function() {
+  }
+  render() {
     return ( 
       <AddressesTransaction txs={this.state.txs} />
     );
   }
-});
-module.exports = AddressesSub;
+}
+
+export default AddressesSub;

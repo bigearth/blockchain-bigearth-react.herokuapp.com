@@ -3,8 +3,11 @@ import React from 'react';
 import { Link } from 'react-router'
 import BlocksTransactionVin from './blocks-transaction-vin.js';
 import BlocksTransactionVout from './blocks-transaction-vout.js';
-const BlocksTransaction = React.createClass({
-  render: function() {
+class BlocksTransaction extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return ( 
       <div>
       {
@@ -65,5 +68,6 @@ const BlocksTransaction = React.createClass({
       </div>
     );
   }
-});
-module.exports = BlocksTransaction;
+}
+
+export default BlocksTransaction;

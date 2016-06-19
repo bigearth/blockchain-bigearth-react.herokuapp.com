@@ -2,8 +2,11 @@ import $ from 'jquery';
 import React from 'react';
 import HomepageHero from './homepage-hero.js';
 import HomepageBlocks from './homepage-blocks.js';
-const Homepage = React.createClass({
-  render: function() {
+class Homepage extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return ( 
       <div>
         <HomepageHero url="https://stageblockchain.bigearth.io/coin.json" />
@@ -11,5 +14,6 @@ const Homepage = React.createClass({
       </div>
     );
   }
-});
-module.exports = Homepage;
+}
+
+export default Homepage;

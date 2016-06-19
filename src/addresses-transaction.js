@@ -1,8 +1,11 @@
 import $ from 'jquery';
 import React from 'react';
 import { Link } from 'react-router'
-const AddressesTransaction = React.createClass({
-  render: function() {
+class AddressesTransaction extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return ( 
       <div className='sub'>
         <div className='container'>
@@ -43,5 +46,6 @@ const AddressesTransaction = React.createClass({
       </div>
     );
   }
-});
-module.exports = AddressesTransaction;
+}
+
+export default AddressesTransaction;

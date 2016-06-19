@@ -1,8 +1,11 @@
 import $ from 'jquery';
 import React from 'react';
 import { Link } from 'react-router'
-const BlocksTransactionVin = React.createClass({
-  render: function() {
+class BlocksTransactionVin extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return ( 
       <table className="table table-striped">
         <tbody>
@@ -21,5 +24,6 @@ const BlocksTransactionVin = React.createClass({
       </table>
     );
   }
-});
-module.exports = BlocksTransactionVin;
+}
+
+export default BlocksTransactionVin;
