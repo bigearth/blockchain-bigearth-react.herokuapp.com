@@ -22,6 +22,8 @@
     "babel-jest": "^12.1.0",
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.9.1",
-    "jest-cli": "^12.1.1"
+    "css-loader": "^0.23.1",
+    "jest-cli": "^12.1.1",
+    "style-loader": "^0.13.1"
   }
 }
