@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import React from 'react';
 import BlocksHero from './blocks-hero.js';
 import BlocksSub from './blocks-sub.js';

@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import React from 'react';
 import { Link } from 'react-router'
 import BlocksTransactionVin from './blocks-transaction-vin.js';

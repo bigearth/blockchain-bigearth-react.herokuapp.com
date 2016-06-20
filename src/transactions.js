@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import React from 'react';
 import TransactionsHero from './transactions-hero.js';
 class Transactions extends React.Component {

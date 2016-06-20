@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import React from 'react';
 import HomepageHero from './homepage-hero.js';
 import HomepageBlocks from './homepage-blocks.js';

@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import React from 'react';
 import AddressesHero from './addresses-hero.js';
 import AddressesSub from './addresses-sub.js';

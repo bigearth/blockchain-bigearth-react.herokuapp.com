@@ -1,7 +1,6 @@
 /* @flow */
 require("../core.scss")
 
-import $ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Link } from 'react-router'
