@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import React from 'react';
 import AddressesTransaction from './addresses-transaction.js';
 class AddressesSub extends React.Component {
@@ -10,19 +9,17 @@ class AddressesSub extends React.Component {
     };
   }
   componentDidMount() {
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      cache: false,
-      success: function(data) {
-        this.setState({
-          data: data.data,
-          txs: data.data.txs
-        });
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
+    fetch(this.props.url)
+    .then((response) => response.text())
+    .then((responseText) => {
+      let data = JSON.parse(responseText);
+      this.setState({
+        data: data.data,
+        txs: data.data.txs
+      });
+    })
+    .catch((error) => {
+      console.warn(error);
     });
   }
   render() {

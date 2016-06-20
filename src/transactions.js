@@ -1,8 +1,11 @@
 import $ from 'jquery';
 import React from 'react';
-const TransactionsHero = require('./transactions-hero.js');
-const Transactions = React.createClass({
-  render: function() {
+import TransactionsHero from './transactions-hero.js';
+class Transactions extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return ( 
       <div className='hero'>
         <section className='container'>
@@ -13,5 +16,5 @@ const Transactions = React.createClass({
       </div>
     );
   }
-});
+}
 module.exports = Transactions;

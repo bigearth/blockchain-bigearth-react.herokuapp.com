@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import React from 'react';
 import { Link } from 'react-router'
 class AddressesHero extends React.Component {
@@ -13,22 +12,20 @@ class AddressesHero extends React.Component {
     };
   }
   componentDidMount() {
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      cache: false,
-      success: function(data) {
-        this.setState({
-          data: data.data,
-          address: data.data.address,
-          balance: data.data.balance,
-          totalreceived: data.data.totalreceived,
-          nb_txs: data.data.nb_txs
-        });
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
+    fetch(this.props.url)
+    .then((response) => response.text())
+    .then((responseText) => {
+      let data = JSON.parse(responseText);
+      this.setState({
+        data: data.data,
+        address: data.data.address,
+        balance: data.data.balance,
+        totalreceived: data.data.totalreceived,
+        nb_txs: data.data.nb_txs
+      });
+    })
+    .catch((error) => {
+      console.warn(error);
     });
   }
   render() {

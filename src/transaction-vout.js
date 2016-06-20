@@ -1,8 +1,11 @@
 import $ from 'jquery';
 import React from 'react';
 import { Link } from 'react-router'
-const TransactionVout = React.createClass({
-  render: function() {
+class TransactionVout extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return ( 
       <tbody>
         {
@@ -18,5 +21,5 @@ const TransactionVout = React.createClass({
       </tbody>
     );
   }
-});
+}
 module.exports = TransactionVout;

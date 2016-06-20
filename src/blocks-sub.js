@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import React from 'react';
 import BlocksTransaction from './blocks-transaction.js';
 class BlocksSub extends React.Component {
@@ -10,19 +9,17 @@ class BlocksSub extends React.Component {
     };
   }
   componentDidMount() {
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      cache: false,
-      success: function(data) {
-        this.setState({
-          data: data.data.txs,
-          nb: data.data.nb
-        });
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
+    fetch(this.props.url)
+    .then((response) => response.text())
+    .then((responseText) => {
+      let data = JSON.parse(responseText);
+      this.setState({
+        data: data.data.txs,
+        nb: data.data.nb
+      });
+    })
+    .catch((error) => {
+      console.warn(error);
     });
   }
   render() {

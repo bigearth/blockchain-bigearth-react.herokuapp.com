@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import React from 'react';
 import { Link } from 'react-router'
 class BlocksHero extends React.Component {
@@ -9,31 +8,29 @@ class BlocksHero extends React.Component {
     };
   }
   componentDidMount() {
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      cache: false,
-      success: function(data) {
-        this.setState({
-          nb: data.data.nb,
-          time_utc: data.data.time_utc,
-          vout_sum: data.data.vout_sum,
-          nb_txs: data.data.nb_txs,
-          difficulty: data.data.difficulty,
-          fee: data.data.fee,
-          hash: data.data.hash,
-          version: data.data.version,
-          confirmations: data.data.confirmations,
-          merkleroot: data.data.merkleroot,
-          next_block_hash: data.data.next_block_hash,
-          prev_block_hash: data.data.prev_block_hash,
-          size: data.data.size,
-          days_destroyed: data.data.days_destroyed
-        });
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
+    fetch(this.props.url)
+    .then((response) => response.text())
+    .then((responseText) => {
+      let data = JSON.parse(responseText);
+      this.setState({
+        nb: data.data.nb,
+        time_utc: data.data.time_utc,
+        vout_sum: data.data.vout_sum,
+        nb_txs: data.data.nb_txs,
+        difficulty: data.data.difficulty,
+        fee: data.data.fee,
+        hash: data.data.hash,
+        version: data.data.version,
+        confirmations: data.data.confirmations,
+        merkleroot: data.data.merkleroot,
+        next_block_hash: data.data.next_block_hash,
+        prev_block_hash: data.data.prev_block_hash,
+        size: data.data.size,
+        days_destroyed: data.data.days_destroyed
+      });
+    })
+    .catch((error) => {
+      console.warn(error);
     });
   }
   render() {

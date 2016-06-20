@@ -3,32 +3,31 @@ import React from 'react';
 import { Link } from 'react-router'
 import TransactionVin from './transaction-vin.js';
 import TransactionVout from './transaction-vout.js';
-const TransactionsHero = React.createClass({
-  getInitialState: function() {
-    return {
+class TransactionsHero extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       data: [],
       vins: [],
       vouts: []
     };
-  },
-  componentDidMount: function() {
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      cache: false,
-      success: function(data) {
-        this.setState({
-          data: data.data,
-          vins: data.data.trade.vins,
-          vouts: data.data.trade.vouts
-        });
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
+  }
+  componentDidMount() {
+    fetch(this.props.url)
+    .then((response) => response.text())
+    .then((responseText) => {
+      let data = JSON.parse(responseText);
+      this.setState({
+        data: data.data,
+        vins: data.data.trade.vins,
+        vouts: data.data.trade.vouts
+      });
+    })
+    .catch((error) => {
+      console.warn(error);
     });
-  },
-  render: function() {
+  }
+  render() {
     return ( 
       <div className="col-sm-12">
         <h2><span className='glyphicon glyphicon-transfer' aria-hidden='true'></span> Bitcoin <strong>Transaction</strong></h2>
@@ -93,9 +92,8 @@ const TransactionsHero = React.createClass({
           </div>
         </div>
       </div>
-
     );
   }
-});
+}
 
 module.exports = TransactionsHero;

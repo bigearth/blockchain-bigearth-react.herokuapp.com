@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import React from 'react';
 class HomepageHero extends React.Component {
   constructor(props) {
@@ -15,27 +14,25 @@ class HomepageHero extends React.Component {
     };
   }
   componentDidMount() {
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      cache: false,
-      success: function(data) {
-        this.setState({
-          data: data.data,
-          value: data.data.markets.coinbase.value,
-          all: data.data.volume.all,
-          current: data.data.volume.current,
-          perc: data.data.volume.perc,
-          market_cap: data.data.markets.coinbase.value * data.data.volume.current,
-          difficulty: data.data.last_block.difficulty,
-          next_difficulty: data.data.next_difficulty.difficulty,
-          next_difficulty_perc: data.data.next_difficulty.perc,
-          retarget_in: data.data.next_difficulty.retarget_in
-        });
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
+    fetch(this.props.url)
+    .then((response) => response.text())
+    .then((responseText) => {
+      let data = JSON.parse(responseText);
+      this.setState({
+        data: data.data,
+        value: data.data.markets.coinbase.value,
+        all: data.data.volume.all,
+        current: data.data.volume.current,
+        perc: data.data.volume.perc,
+        market_cap: data.data.markets.coinbase.value * data.data.volume.current,
+        difficulty: data.data.last_block.difficulty,
+        next_difficulty: data.data.next_difficulty.difficulty,
+        next_difficulty_perc: data.data.next_difficulty.perc,
+        retarget_in: data.data.next_difficulty.retarget_in
+      });
+    })
+    .catch((error) => {
+      console.warn(error);
     });
   }
   render() {
